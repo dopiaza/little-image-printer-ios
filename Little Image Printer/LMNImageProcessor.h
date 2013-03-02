@@ -12,8 +12,10 @@
 
 
 - (id)initWithSourceImageURL:(NSURL *)sourceImageURL;
+- (id)initWithSourceImage:(UIImage *)sourceImage;
 - (UIImage *)processImage;
 - (NSData *)generatePNG;
+- (NSData *)generateJPG;
 
 @property (assign) CGFloat brightness;
 @property (assign) CGFloat contrast;

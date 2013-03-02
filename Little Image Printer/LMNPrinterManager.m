@@ -43,38 +43,57 @@ static LMNPrinterManager *_sharedPrinterManager;
     return @"JQF379XBGUL8";
 }
 
-- (void)printImage:(NSURL *)imageURL
+- (void)printImageForURL:(NSURL *)imageURL
 {
     if (imageURL)
     {
-        NSError *error;
-        
         self.imageProcessor = [[LMNImageProcessor alloc] initWithSourceImageURL:imageURL];
-        [self.imageProcessor processImage];
-        
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"print" ofType:@"html"];
-        NSMutableString *html = [NSMutableString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
-        
-    
-        NSData *imageData = [self.imageProcessor generatePNG];
-        NSString *dataUri = [NSString stringWithFormat:@"data:image/png;base64,%@", [imageData base64EncodedString]];
-        NSString *ditherClass = @"dither";
-        
-        NSString *finalHTML = [[html stringByReplacingOccurrencesOfString:@"_IMAGECLASS_" withString:ditherClass]
-                               stringByReplacingOccurrencesOfString:@"_IMAGEURL_" withString:dataUri];
-        NSString *urlEncodedHtml = [finalHTML urlEncode];
-        
-        NSString *body = [NSString stringWithFormat:@"html=%@", urlEncodedHtml];
-        NSString *urlString = [NSString stringWithFormat:@"http://remote.bergcloud.com/playground/direct_print/%@", [self getDefaultPrinterCode]];
-        NSURL *url = [NSURL URLWithString:urlString];
-        NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
-        [urlRequest setHTTPMethod:@"POST"];
-        [urlRequest setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
-        
-        NSLog(@"Start connection");
-        self.connection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:NO];
-        [self.connection start];
+        [self doPrint];
     }
+}
+
+- (void)printImage:(UIImage *)image
+{
+    if (image)
+    {
+        self.imageProcessor = [[LMNImageProcessor alloc] initWithSourceImage:image];        
+        [self doPrint];
+    }
+}
+
+- (void)doPrint
+{
+    NSError *error;
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"print" ofType:@"html"];
+    NSMutableString *html = [NSMutableString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
+    
+    NSString *contentType = @"image/png";
+    NSData *imageData = [self.imageProcessor generatePNG];
+    if ([imageData length] == 0)
+    {
+        imageData = [self.imageProcessor generateJPG];
+        contentType = @"image/jpg";
+    }
+    
+    NSString *dataUri = [NSString stringWithFormat:@"data:%@;base64,%@", contentType, [imageData base64EncodedString]];
+    NSString *ditherClass = @"dither";
+    
+    NSString *finalHTML = [[html stringByReplacingOccurrencesOfString:@"_IMAGECLASS_" withString:ditherClass]
+                           stringByReplacingOccurrencesOfString:@"_IMAGEURL_" withString:dataUri];
+    NSString *urlEncodedHtml = [finalHTML urlEncode];
+    
+    NSString *body = [NSString stringWithFormat:@"html=%@", urlEncodedHtml];
+    NSString *urlString = [NSString stringWithFormat:@"http://remote.bergcloud.com/playground/direct_print/%@", [self getDefaultPrinterCode]];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+    [urlRequest setHTTPMethod:@"POST"];
+    [urlRequest setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSLog(@"Start connection");
+    self.connection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:NO];
+    [self.connection start];
+    
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error

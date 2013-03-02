@@ -42,6 +42,20 @@
     return self;
 }
 
+- (id)initWithSourceImage:(UIImage *)sourceImage
+{
+    self = [super init];
+    if (self)
+    {
+        self.imageURL = nil;
+        self.sourceImage = sourceImage;
+        self.brightness = 0.0;
+        self.contrast = 1.0;
+        [self initialiseImage];
+    }
+    return self;
+}
+
 
 - (void)setColorControls
 {
@@ -52,7 +66,10 @@
 
 - (void)initialiseImage
 {
-    self.sourceImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.imageURL]];
+    if (self.imageURL)
+    {
+        self.sourceImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.imageURL]];
+    }
     self.originalSize = [self.sourceImage size];
     CGFloat scale = LPWIDTH/self.originalSize.width;
     self.baseSize = CGSizeMake(LPWIDTH, self.originalSize.height * scale);
@@ -89,11 +106,20 @@
 
 - (NSData *)generatePNG
 {
-    NSData *pngData = UIImagePNGRepresentation(self.adjustedImage);
+    NSData *pngData = [NSData dataWithData:UIImagePNGRepresentation(self.adjustedImage)];
     
     //BOOL ok = [pngData writeToFile:@"/Users/davidw/Desktop/image.png" atomically:NO];
     
     return pngData;
+}
+
+- (NSData *)generateJPG
+{
+    NSData *jpgData = [NSData dataWithData:UIImageJPEGRepresentation(self.adjustedImage, 0.9)];
+    
+    //BOOL ok = [pngData writeToFile:@"/Users/davidw/Desktop/image.png" atomically:NO];
+    
+    return jpgData;
 }
 
 @end

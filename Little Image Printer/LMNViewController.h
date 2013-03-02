@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LMNViewController : UIViewController
+<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 - (IBAction)managePrinters:(id)sender;
 - (IBAction)takePhoto:(id)sender;

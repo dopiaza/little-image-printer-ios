@@ -14,6 +14,7 @@
 
 - (NSString *)getDefaultPrinterName;
 - (NSString *)getDefaultPrinterCode;
-- (void)printImage:(NSURL *)imageURL;
+- (void)printImageForURL:(NSURL *)imageURL;
+- (void)printImage:(UIImage *)image;
 
 @end

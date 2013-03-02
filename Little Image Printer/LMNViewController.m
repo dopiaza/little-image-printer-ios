@@ -40,8 +40,25 @@
 
 - (IBAction)chooseFromLibrary:(id)sender
 {
-    NSURL *url = [NSURL URLWithString:@"http://farm9.staticflickr.com/8240/8473037025_613c1d9247_z.jpg"];
-    [[LMNPrinterManager sharedPrinterManager] printImage:url];
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = NO;
+    [self presentViewController:imagePicker animated:YES completion:^{
+    }];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    //NSURL *url = [info objectForKey:UIImagePickerControllerReferenceURL];
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+    if (image == nil)
+    {
+        image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    }
+    
+    [[LMNPrinterManager sharedPrinterManager] printImage:image];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
