@@ -12,6 +12,7 @@
 
 - (IBAction)print;
 - (IBAction)adjusted;
+- (IBAction)cancel;
 
 @property (nonatomic, strong) UIImage *sourceImage;
 

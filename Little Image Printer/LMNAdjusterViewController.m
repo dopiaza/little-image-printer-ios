@@ -57,4 +57,9 @@
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)cancel
+{
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];    
+}
+
 @end
