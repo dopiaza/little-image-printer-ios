@@ -1,0 +1,320 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4F5FAFBA16E217C5007797D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FAFB916E217C5007797D1 /* UIKit.framework */; };
+		4F5FAFBC16E217C5007797D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FAFBB16E217C5007797D1 /* Foundation.framework */; };
+		4F5FAFBE16E217C5007797D1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FAFBD16E217C5007797D1 /* CoreGraphics.framework */; };
+		4F5FAFC416E217C5007797D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFC216E217C5007797D1 /* InfoPlist.strings */; };
+		4F5FAFC616E217C5007797D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5FAFC516E217C5007797D1 /* main.m */; };
+		4F5FAFCA16E217C5007797D1 /* LMNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5FAFC916E217C5007797D1 /* LMNAppDelegate.m */; };
+		4F5FAFCC16E217C5007797D1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFCB16E217C5007797D1 /* Default.png */; };
+		4F5FAFCE16E217C5007797D1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFCD16E217C5007797D1 /* Default@2x.png */; };
+		4F5FAFD016E217C5007797D1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFCF16E217C5007797D1 /* Default-568h@2x.png */; };
+		4F5FAFD316E217C5007797D1 /* LMNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5FAFD216E217C5007797D1 /* LMNViewController.m */; };
+		4F5FAFD616E217C5007797D1 /* LMNViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFD416E217C5007797D1 /* LMNViewController_iPhone.xib */; };
+		4F5FAFD916E217C5007797D1 /* LMNViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFD716E217C5007797D1 /* LMNViewController_iPad.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4F5FAFB616E217C5007797D1 /* Little Image Printer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Image Printer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F5FAFB916E217C5007797D1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4F5FAFBB16E217C5007797D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4F5FAFBD16E217C5007797D1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4F5FAFC116E217C5007797D1 /* Little Image Printer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Little Image Printer-Info.plist"; sourceTree = "<group>"; };
+		4F5FAFC316E217C5007797D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4F5FAFC516E217C5007797D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4F5FAFC716E217C5007797D1 /* Little Image Printer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Little Image Printer-Prefix.pch"; sourceTree = "<group>"; };
+		4F5FAFC816E217C5007797D1 /* LMNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMNAppDelegate.h; sourceTree = "<group>"; };
+		4F5FAFC916E217C5007797D1 /* LMNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMNAppDelegate.m; sourceTree = "<group>"; };
+		4F5FAFCB16E217C5007797D1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		4F5FAFCD16E217C5007797D1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		4F5FAFCF16E217C5007797D1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4F5FAFD116E217C5007797D1 /* LMNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMNViewController.h; sourceTree = "<group>"; };
+		4F5FAFD216E217C5007797D1 /* LMNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMNViewController.m; sourceTree = "<group>"; };
+		4F5FAFD516E217C5007797D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LMNViewController_iPhone.xib; sourceTree = "<group>"; };
+		4F5FAFD816E217C5007797D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LMNViewController_iPad.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F5FAFB316E217C5007797D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F5FAFBA16E217C5007797D1 /* UIKit.framework in Frameworks */,
+				4F5FAFBC16E217C5007797D1 /* Foundation.framework in Frameworks */,
+				4F5FAFBE16E217C5007797D1 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F5FAFAD16E217C5007797D1 = {
+			isa = PBXGroup;
+			children = (
+				4F5FAFBF16E217C5007797D1 /* Little Image Printer */,
+				4F5FAFB816E217C5007797D1 /* Frameworks */,
+				4F5FAFB716E217C5007797D1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4F5FAFB716E217C5007797D1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F5FAFB616E217C5007797D1 /* Little Image Printer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F5FAFB816E217C5007797D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F5FAFB916E217C5007797D1 /* UIKit.framework */,
+				4F5FAFBB16E217C5007797D1 /* Foundation.framework */,
+				4F5FAFBD16E217C5007797D1 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F5FAFBF16E217C5007797D1 /* Little Image Printer */ = {
+			isa = PBXGroup;
+			children = (
+				4F5FAFC816E217C5007797D1 /* LMNAppDelegate.h */,
+				4F5FAFC916E217C5007797D1 /* LMNAppDelegate.m */,
+				4F5FAFD116E217C5007797D1 /* LMNViewController.h */,
+				4F5FAFD216E217C5007797D1 /* LMNViewController.m */,
+				4F5FAFD416E217C5007797D1 /* LMNViewController_iPhone.xib */,
+				4F5FAFD716E217C5007797D1 /* LMNViewController_iPad.xib */,
+				4F5FAFC016E217C5007797D1 /* Supporting Files */,
+			);
+			path = "Little Image Printer";
+			sourceTree = "<group>";
+		};
+		4F5FAFC016E217C5007797D1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4F5FAFC116E217C5007797D1 /* Little Image Printer-Info.plist */,
+				4F5FAFC216E217C5007797D1 /* InfoPlist.strings */,
+				4F5FAFC516E217C5007797D1 /* main.m */,
+				4F5FAFC716E217C5007797D1 /* Little Image Printer-Prefix.pch */,
+				4F5FAFCB16E217C5007797D1 /* Default.png */,
+				4F5FAFCD16E217C5007797D1 /* Default@2x.png */,
+				4F5FAFCF16E217C5007797D1 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F5FAFB516E217C5007797D1 /* Little Image Printer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F5FAFDC16E217C5007797D1 /* Build configuration list for PBXNativeTarget "Little Image Printer" */;
+			buildPhases = (
+				4F5FAFB216E217C5007797D1 /* Sources */,
+				4F5FAFB316E217C5007797D1 /* Frameworks */,
+				4F5FAFB416E217C5007797D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Little Image Printer";
+			productName = "Little Image Printer";
+			productReference = 4F5FAFB616E217C5007797D1 /* Little Image Printer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F5FAFAE16E217C5007797D1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LMN;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Lumen Services Limited";
+			};
+			buildConfigurationList = 4F5FAFB116E217C5007797D1 /* Build configuration list for PBXProject "Little Image Printer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4F5FAFAD16E217C5007797D1;
+			productRefGroup = 4F5FAFB716E217C5007797D1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F5FAFB516E217C5007797D1 /* Little Image Printer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F5FAFB416E217C5007797D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F5FAFC416E217C5007797D1 /* InfoPlist.strings in Resources */,
+				4F5FAFCC16E217C5007797D1 /* Default.png in Resources */,
+				4F5FAFCE16E217C5007797D1 /* Default@2x.png in Resources */,
+				4F5FAFD016E217C5007797D1 /* Default-568h@2x.png in Resources */,
+				4F5FAFD616E217C5007797D1 /* LMNViewController_iPhone.xib in Resources */,
+				4F5FAFD916E217C5007797D1 /* LMNViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F5FAFB216E217C5007797D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F5FAFC616E217C5007797D1 /* main.m in Sources */,
+				4F5FAFCA16E217C5007797D1 /* LMNAppDelegate.m in Sources */,
+				4F5FAFD316E217C5007797D1 /* LMNViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4F5FAFC216E217C5007797D1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F5FAFC316E217C5007797D1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4F5FAFD416E217C5007797D1 /* LMNViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F5FAFD516E217C5007797D1 /* en */,
+			);
+			name = LMNViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		4F5FAFD716E217C5007797D1 /* LMNViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F5FAFD816E217C5007797D1 /* en */,
+			);
+			name = LMNViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4F5FAFDA16E217C5007797D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4F5FAFDB16E217C5007797D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4F5FAFDD16E217C5007797D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Little Image Printer/Little Image Printer-Prefix.pch";
+				INFOPLIST_FILE = "Little Image Printer/Little Image Printer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4F5FAFDE16E217C5007797D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Little Image Printer/Little Image Printer-Prefix.pch";
+				INFOPLIST_FILE = "Little Image Printer/Little Image Printer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F5FAFB116E217C5007797D1 /* Build configuration list for PBXProject "Little Image Printer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F5FAFDA16E217C5007797D1 /* Debug */,
+				4F5FAFDB16E217C5007797D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F5FAFDC16E217C5007797D1 /* Build configuration list for PBXNativeTarget "Little Image Printer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F5FAFDD16E217C5007797D1 /* Debug */,
+				4F5FAFDE16E217C5007797D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F5FAFAE16E217C5007797D1 /* Project object */;
+}
