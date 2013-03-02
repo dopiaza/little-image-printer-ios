@@ -9,10 +9,12 @@
 #import "LMNViewController.h"
 #import "LMNImageProcessor.h"
 #import "LMNPrinterManager.h"
+#import "LMNAdjusterViewController.h"
 
 @interface LMNViewController ()
 
 @property (nonatomic, assign) BOOL usingCamera;
+@property (nonatomic, assign) UIImage *image;
 
 @end
 
@@ -49,7 +51,7 @@
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     imagePicker.delegate = self;
-    imagePicker.allowsEditing = YES;
+    imagePicker.allowsEditing = NO;
     self.usingCamera = NO;
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
@@ -57,19 +59,36 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     //NSURL *url = [info objectForKey:UIImagePickerControllerReferenceURL];
-    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
-    if (image == nil)
+    self.image = [info objectForKey:UIImagePickerControllerEditedImage];
+    if (self.image == nil)
     {
-        image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        self.image = [info objectForKey:UIImagePickerControllerOriginalImage];
     }
     
-    if (image)
+    if (self.image)
     {
-        [[LMNPrinterManager sharedPrinterManager] printImage:image];
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+        //[[LMNPrinterManager sharedPrinterManager] printImage:self.image];
+        if (self.usingCamera)
+        {
+            UIImageWriteToSavedPhotosAlbum(self.image, nil, nil, nil);
+        }
+        //[self performSelectorOnMainThread:@selector(runAdjuster:) withObject:self.image waitUntilDone:NO];
     }
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    UIImage *img = self.image;
+    [self dismissViewControllerAnimated:YES completion:^{
+        if (img)
+        {
+            [self runAdjuster:img];
+        }
+    }];
+}
+
+- (void)runAdjuster:(UIImage *)image
+{
+    LMNAdjusterViewController *vc = [[LMNAdjusterViewController alloc] initWithNibName:@"LMNAdjusterViewController" bundle:nil];
+    vc.sourceImage = image;
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 @end
