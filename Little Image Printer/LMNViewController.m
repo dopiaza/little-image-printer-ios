@@ -12,6 +12,8 @@
 
 @interface LMNViewController ()
 
+@property (nonatomic, assign) BOOL usingCamera;
+
 @end
 
 @implementation LMNViewController
@@ -38,9 +40,8 @@
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
     imagePicker.delegate = self;
-    imagePicker.allowsEditing = NO;
-    [self presentViewController:imagePicker animated:YES completion:^{
-    }];    
+    self.usingCamera = YES;
+    [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
 - (IBAction)chooseFromLibrary:(id)sender
@@ -48,9 +49,9 @@
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     imagePicker.delegate = self;
-    imagePicker.allowsEditing = NO;
-    [self presentViewController:imagePicker animated:YES completion:^{
-    }];
+    imagePicker.allowsEditing = YES;
+    self.usingCamera = NO;
+    [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
@@ -62,7 +63,12 @@
         image = [info objectForKey:UIImagePickerControllerOriginalImage];
     }
     
-    [[LMNPrinterManager sharedPrinterManager] printImage:image];
+    if (image)
+    {
+        [[LMNPrinterManager sharedPrinterManager] printImage:image];
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+    }
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
