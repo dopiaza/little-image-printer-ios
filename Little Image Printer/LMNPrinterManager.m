@@ -69,7 +69,7 @@ static LMNPrinterManager *_sharedPrinterManager;
     NSMutableString *html = [NSMutableString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
     
     NSString *contentType = @"image/png";
-    NSData *imageData = [self.imageProcessor generatePNG];
+    NSData *imageData = nil; // [self.imageProcessor generatePNG];
     if ([imageData length] == 0)
     {
         imageData = [self.imageProcessor generateJPG];

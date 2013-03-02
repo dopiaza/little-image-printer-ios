@@ -70,6 +70,32 @@
     {
         self.sourceImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.imageURL]];
     }
+    
+    CGFloat angle = 0.0;
+    UIImageOrientation orientation = self.sourceImage.imageOrientation;
+    switch (orientation)
+    {
+        case UIImageOrientationUp:
+            angle = 0.0;
+            break;
+            
+        case UIImageOrientationDown:
+            angle = M_PI;
+            break;
+            
+        case UIImageOrientationLeft:
+            angle = M_PI_2;
+            break;
+            
+        case UIImageOrientationRight:
+            angle = -M_PI_2;
+            break;
+            
+        default:
+            angle = 0.0;
+            break;
+    }
+    
     self.originalSize = [self.sourceImage size];
     CGFloat scale = LPWIDTH/self.originalSize.width;
     self.baseSize = CGSizeMake(LPWIDTH, self.originalSize.height * scale);
@@ -77,6 +103,12 @@
     CIImage *img = [[CIImage alloc] initWithCGImage:[self.sourceImage CGImage]];;
     CGAffineTransform t = CGAffineTransformMakeScale(scale, scale);
     self.baseImage = [img imageByApplyingTransform:t];
+    
+    if (angle != 0.0)
+    {
+        CGAffineTransform rotator = CGAffineTransformMakeRotation(angle);
+        self.baseImage = [self.baseImage imageByApplyingTransform:rotator];
+    }
     
     self.colorControls = [CIFilter filterWithName:@"CIColorControls"];
     [self.colorControls setValue:self.baseImage forKey:@"inputImage"];
