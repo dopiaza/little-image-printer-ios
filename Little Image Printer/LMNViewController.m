@@ -35,7 +35,12 @@
 
 - (IBAction)takePhoto:(id)sender
 {
-    
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = NO;
+    [self presentViewController:imagePicker animated:YES completion:^{
+    }];    
 }
 
 - (IBAction)chooseFromLibrary:(id)sender
