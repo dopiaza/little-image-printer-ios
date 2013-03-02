@@ -10,4 +10,8 @@
 
 @interface LMNViewController : UIViewController
 
+- (IBAction)managePrinters:(id)sender;
+- (IBAction)takePhoto:(id)sender;
+- (IBAction)chooseFromLibrary:(id)sender;
+
 @end

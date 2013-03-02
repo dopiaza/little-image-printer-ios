@@ -7,6 +7,8 @@
 //
 
 #import "LMNViewController.h"
+#import "LMNImageProcessor.h"
+#import "LMNPrinterManager.h"
 
 @interface LMNViewController ()
 
@@ -24,6 +26,22 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)managePrinters:(id)sender
+{
+    
+}
+
+- (IBAction)takePhoto:(id)sender
+{
+    
+}
+
+- (IBAction)chooseFromLibrary:(id)sender
+{
+    NSURL *url = [NSURL URLWithString:@"http://farm9.staticflickr.com/8240/8473037025_613c1d9247_z.jpg"];
+    [[LMNPrinterManager sharedPrinterManager] printImage:url];
 }
 
 @end
