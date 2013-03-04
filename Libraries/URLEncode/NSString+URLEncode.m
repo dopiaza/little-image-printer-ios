@@ -1,6 +1,5 @@
 //
 //  NSString+URLEncode.m
-//  DPZAPIKit
 //
 //  Created by David Wilkinson on 26/08/2012.
 //  Copyright (c) 2012 David Wilkinson. All rights reserved.

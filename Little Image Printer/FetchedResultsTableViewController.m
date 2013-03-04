@@ -1,6 +1,5 @@
 //
 //  FetchedResultsViewController.m
-//  plurkiaza
 //
 //  Created by David Wilkinson on 09/04/2012.
 //  Copyright (c) 2012 Lumen Services Limited. All rights reserved.

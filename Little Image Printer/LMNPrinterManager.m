@@ -1,4 +1,4 @@
-    //
+//
 //  LMNPrinterManager.m
 //  Little Image Printer
 //
@@ -40,7 +40,7 @@ static LMNPrinterManager *_sharedPrinterManager;
 
 - (NSString *)getDefaultPrinterCode
 {
-    return @"JQF379XBGUL8";
+    return @"_PUT_YOUR_PRINTER_CODE_HERE";
 }
 
 - (void)printImageForURL:(NSURL *)imageURL
@@ -68,13 +68,8 @@ static LMNPrinterManager *_sharedPrinterManager;
     NSString *path = [[NSBundle mainBundle] pathForResource:@"print" ofType:@"html"];
     NSMutableString *html = [NSMutableString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
     
-    NSString *contentType = @"image/png";
-    NSData *imageData = nil; // [self.imageProcessor generatePNG];
-    if ([imageData length] == 0)
-    {
-        imageData = [self.imageProcessor generateJPG];
-        contentType = @"image/jpg";
-    }
+    NSString *contentType = @"image/jpg";
+    NSData *imageData = [self.imageProcessor generateJPG];
     
     NSString *dataUri = [NSString stringWithFormat:@"data:%@;base64,%@", contentType, [imageData base64EncodedString]];
     NSString *ditherClass = @"dither";
