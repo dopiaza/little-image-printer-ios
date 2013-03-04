@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FetchedResultsTableViewController.h"
 
-@interface LMNManagePrinterViewController : UIViewController
+@interface LMNManagePrinterViewController : FetchedResultsTableViewController
 
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *addButton;
 

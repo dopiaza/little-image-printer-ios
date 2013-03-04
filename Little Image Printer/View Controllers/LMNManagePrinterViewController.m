@@ -7,6 +7,9 @@
 //
 
 #import "LMNManagePrinterViewController.h"
+#import "LMNPrinterManager.h"
+#import "LMNEditPrinterViewController.h"
+#import "Printer.h"
 
 @interface LMNManagePrinterViewController ()
 
@@ -28,7 +31,12 @@
 {
     [super viewDidLoad];
 
-    self.addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPrinter:)];
+    self.fetchedResultsController = [LMNPrinterManager sharedPrinterManager].printersFetchedResultsController;
+    
+    self.addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                  target:self
+                                                                  action:@selector(addPrinter:)];
+    self.navigationItem.rightBarButtonItem = self.addButton;
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,7 +47,38 @@
 
 - (void)addPrinter:(id)sender
 {
-    
+    LMNEditPrinterViewController *vc = [[LMNEditPrinterViewController alloc] initWithNibName:@"LMNEditPrinterViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
+
+-(UITableViewCell *)newCellWithReuseIdentifier:(NSString *)cellIdentifier
+{
+    return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+}
+
+-(void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    Printer *printer = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    cell.textLabel.text = printer.name;
+    cell.detailTextLabel.text = printer.code;
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    Printer *printer = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    LMNEditPrinterViewController *vc = [[LMNEditPrinterViewController alloc] initWithNibName:@"LMNEditPrinterViewController" bundle:nil];
+    vc.printer = printer;
+    [self.navigationController pushViewController:vc animated:YES];    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Printer *printer = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [LMNPrinterManager sharedPrinterManager].activePrinter = printer;
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 @end

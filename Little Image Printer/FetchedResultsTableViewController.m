@@ -39,15 +39,16 @@
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-    
+            
     self.tableView = nil;
 }
 
--(void)setFetchedResultsController:(NSFetchedResultsController *)fetchedResultsController
+- (void)setFetchedResultsController:(NSFetchedResultsController *)fetchedResultsController
 {
     _fetchedResultsController.delegate = nil;
     _fetchedResultsController = fetchedResultsController;
     _fetchedResultsController.delegate = self;
+    [_fetchedResultsController performFetch:nil];  // TODO Error handling
 }
 
 #pragma mark - Table view data source
@@ -90,13 +91,15 @@
 
 #pragma mark - Fetched results controller
 
--(void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
     [self.tableView beginUpdates];
 }
 
--(void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
-          atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
+- (void)controller:(NSFetchedResultsController *)controller
+ didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+          atIndex:(NSUInteger)sectionIndex
+    forChangeType:(NSFetchedResultsChangeType)type
 {
     switch(type) 
     {
@@ -110,8 +113,10 @@
     }
 }
 
--(void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
-      atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+- (void)controller:(NSFetchedResultsController *)controller
+  didChangeObject:(id)anObject
+      atIndexPath:(NSIndexPath *)indexPath
+    forChangeType:(NSFetchedResultsChangeType)type
      newIndexPath:(NSIndexPath *)newIndexPath
 {
     UITableView *tableView = self.tableView;
@@ -127,8 +132,12 @@
             break;
             
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+        {
+            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            [self configureCell:cell atIndexPath:indexPath];
+            [cell setNeedsLayout];
             break;
+        }
             
         case NSFetchedResultsChangeMove:
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -137,18 +146,18 @@
     }
 }
 
--(void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
     [self.tableView endUpdates];
 }
 
--(UITableViewCell *)newCellWithReuseIdentifier:(NSString *)cellIdentifier
+- (UITableViewCell *)newCellWithReuseIdentifier:(NSString *)cellIdentifier
 {
     // override this
     return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
 }
 
--(void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     // override this
 }
