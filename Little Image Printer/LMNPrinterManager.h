@@ -7,14 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Printer.h"
 
 @interface LMNPrinterManager : NSObject
 
 + (LMNPrinterManager *)sharedPrinterManager;
 
-- (NSString *)getDefaultPrinterName;
-- (NSString *)getDefaultPrinterCode;
+- (Printer *) createPrinter;
+
+
 - (void)printImageForURL:(NSURL *)imageURL;
 - (void)printImage:(UIImage *)image;
+
+@property (nonatomic, strong) Printer *activePrinter;
+
+@property (nonatomic, retain, readonly) NSFetchedResultsController *printersFetchedResultsController;
+@property (nonatomic, readonly) NSArray *printers;
 
 @end

@@ -15,7 +15,6 @@ static LMNDataManager *_sharedManager = nil;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
-@synthesize printersFetchedResultsController = _printersFetchedResultsController;
 
 + (LMNDataManager *)sharedManager
 {
@@ -26,57 +25,52 @@ static LMNDataManager *_sharedManager = nil;
     return _sharedManager;
 }
 
-- (Printer *)createPrinter
-{
-    return [self insertNewObjectForEntityForName:@"Printer"];
-}
-
 #pragma mark - Core Data
 
--(id)getAllFromFetchRequest:(NSFetchRequest *)fetchRequest
+- (id)getAllFromFetchRequest:(NSFetchRequest *)fetchRequest
 {
     NSArray *matches = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
     
     return matches;
 }
 
--(id)getOneFromFetchRequest:(NSFetchRequest *)fetchRequest
+- (id)getOneFromFetchRequest:(NSFetchRequest *)fetchRequest
 {
     NSArray *matches = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
     
     return ([matches count] >= 1) ? [matches objectAtIndex:0] : nil;
 }
 
--(id)insertNewObjectForEntityForName:(NSString *)name
+- (id)insertNewObjectForEntityForName:(NSString *)name
 {
     NSManagedObjectContext *context = [self managedObjectContext];
     return [NSEntityDescription insertNewObjectForEntityForName:name inManagedObjectContext:context];
 }
 
--(NSFetchRequest *)newFetchRequestForEntityNamed:(NSString *)name
+- (NSFetchRequest *)newFetchRequestForEntityNamed:(NSString *)name
 {
     NSEntityDescription *entity = [self entityForName:name];
     return [self newFetchRequestForEntity:entity];
 }
 
--(NSFetchRequest *)newFetchRequestForEntity:(NSEntityDescription *)entity
+- (NSFetchRequest *)newFetchRequestForEntity:(NSEntityDescription *)entity
 {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     fetchRequest.entity = entity;
     return  fetchRequest;
 }
 
--(NSEntityDescription *)entityForName:(NSString *)name
+- (NSEntityDescription *)entityForName:(NSString *)name
 {
     return [NSEntityDescription entityForName:name inManagedObjectContext:[self managedObjectContext]];
 }
 
--(NSManagedObject *)loadObjectWithId:(NSManagedObjectID *)moId
+- (NSManagedObject *)loadObjectWithId:(NSManagedObjectID *)moId
 {
     return [self.managedObjectContext objectRegisteredForID:moId];
 }
 
--(void)deleteObject:(NSManagedObject *)object
+- (void)deleteObject:(NSManagedObject *)object
 {
     if (object)
     {
@@ -114,10 +108,10 @@ static LMNDataManager *_sharedManager = nil;
                              nil];
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error])
     {
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]); // TODO
-        abort();
+        [self fatalError:error];
     }
     
     return _persistentStoreCoordinator;
@@ -139,20 +133,6 @@ static LMNDataManager *_sharedManager = nil;
     }
     
     return _managedObjectContext;
-}
-
--(NSManagedObjectContext *)backgroundManagedObjectContext
-{
-    NSManagedObjectContext *ctx = nil;
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (coordinator != nil)
-    {
-        ctx = [[NSManagedObjectContext alloc] init];
-        [ctx setPersistentStoreCoordinator:coordinator];
-        ctx.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy;
-    }
-    
-    return ctx;
 }
 
 -(NSURL *)applicationDocumentsDirectory
@@ -198,25 +178,6 @@ static LMNDataManager *_sharedManager = nil;
                               otherButtonTitles:nil];
         [alert show];
     });
-}
-
-
-- (NSFetchedResultsController *)printersFetchedResultsController
-{
-    if (_printersFetchedResultsController == nil)
-    {
-        NSFetchRequest *fr = [self newFetchRequestForEntityNamed:@"Printer"];
-        NSSortDescriptor *nameSort = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
-        fr.sortDescriptors = [NSArray arrayWithObject:nameSort];
-        
-        _printersFetchedResultsController = [[NSFetchedResultsController alloc]
-                                             initWithFetchRequest:fr
-                                             managedObjectContext:self.managedObjectContext
-                                               sectionNameKeyPath:nil
-                                                        cacheName:nil];
-    }
-    
-    return _printersFetchedResultsController;
 }
 
 @end

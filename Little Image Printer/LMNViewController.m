@@ -11,6 +11,7 @@
 #import "LMNPrinterManager.h"
 #import "LMNAdjusterViewController.h"
 #import "LMNManagePrinterViewController.h"
+#import "Printer.h"
 
 @interface LMNViewController ()
 
@@ -24,13 +25,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    [self refresh];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self refresh];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)refresh
+{
+    Printer *printer = [LMNPrinterManager sharedPrinterManager].activePrinter;
+    self.printerNameLabel.text = printer ? printer.name : @"";
 }
 
 - (IBAction)managePrinters:(id)sender

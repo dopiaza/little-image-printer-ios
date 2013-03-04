@@ -8,6 +8,7 @@
 
 #import "LMNEditPrinterViewController.h"
 #import "LMNDataManager.h"
+#import "LMNPrinterManager.h"
 
 @interface LMNEditPrinterViewController ()
 
@@ -32,6 +33,11 @@
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)];
 
     self.navigationItem.rightBarButtonItem = saveButton;
+    if (self.printer)
+    {
+        self.name.text = self.printer.name;
+        self.code.text = self.printer.code;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,11 +49,45 @@
 - (void)save
 {
     LMNDataManager *dm = [LMNDataManager sharedManager];
-    Printer *printer = [dm createPrinter];
-    printer.name = self.name.text;
-    printer.code = self.code.text;
+    if (self.printer == nil)
+    {
+        self.printer = [[LMNPrinterManager sharedPrinterManager] createPrinter];
+    }
+    self.printer.name = self.name.text;
+    self.printer.code = self.code.text;
     [dm saveContext];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)deletePrinter:(id)sender
+{
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: @"Confirm Delete"
+                          message: [NSString stringWithFormat:@"Are you sure you want to delete %@?", self.printer.name]
+                          delegate: self
+                          cancelButtonTitle: @"Cancel"
+                          otherButtonTitles: @"Delete", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex)
+    {
+        case 0:
+            // Cancel
+            break;
+            
+        case 1:
+        {
+            // Delete
+            LMNDataManager *dm = [LMNDataManager sharedManager];
+            [dm deleteObject:self.printer];
+            [dm saveContext];
+            [self.navigationController popViewControllerAnimated:YES];
+            break;
+        }
+    }
 }
 
 @end

@@ -15,5 +15,6 @@
 - (IBAction)takePhoto:(id)sender;
 - (IBAction)chooseFromLibrary:(id)sender;
 
+@property (nonatomic, strong) IBOutlet UILabel *printerNameLabel;
 
 @end

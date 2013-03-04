@@ -2,7 +2,7 @@
 //  Printer.m
 //  Little Image Printer
 //
-//  Created by David Wilkinson on 03/03/2013.
+//  Created by David Wilkinson on 04/03/2013.
 //  Copyright (c) 2013 Lumen Services Limited. All rights reserved.
 //
 
@@ -13,5 +13,6 @@
 
 @dynamic code;
 @dynamic name;
+@dynamic active;
 
 @end

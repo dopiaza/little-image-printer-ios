@@ -7,9 +7,9 @@
 //
 
 #import "LMNManagePrinterViewController.h"
-#import "LMNDataManager.h"
-#import "Printer.h"
+#import "LMNPrinterManager.h"
 #import "LMNEditPrinterViewController.h"
+#import "Printer.h"
 
 @interface LMNManagePrinterViewController ()
 
@@ -31,7 +31,7 @@
 {
     [super viewDidLoad];
 
-    self.fetchedResultsController = [LMNDataManager sharedManager].printersFetchedResultsController;
+    self.fetchedResultsController = [LMNPrinterManager sharedPrinterManager].printersFetchedResultsController;
     
     self.addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                   target:self
@@ -62,6 +62,23 @@
     
     cell.textLabel.text = printer.name;
     cell.detailTextLabel.text = printer.code;
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 }
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    Printer *printer = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    LMNEditPrinterViewController *vc = [[LMNEditPrinterViewController alloc] initWithNibName:@"LMNEditPrinterViewController" bundle:nil];
+    vc.printer = printer;
+    [self.navigationController pushViewController:vc animated:YES];    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Printer *printer = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [LMNPrinterManager sharedPrinterManager].activePrinter = printer;
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 @end

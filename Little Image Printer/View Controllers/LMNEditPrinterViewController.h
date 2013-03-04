@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Printer.h"
 
 @interface LMNEditPrinterViewController : UIViewController
+
+- (IBAction)deletePrinter:(id)sender;
 
 @property (nonatomic, strong) IBOutlet UITextField *name;
 @property (nonatomic, strong) IBOutlet UITextField *code;
 
+@property (nonatomic, strong) Printer *printer;
+
 @end
+
