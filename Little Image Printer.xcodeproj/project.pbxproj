@@ -34,7 +34,9 @@
 		4F5FB00C16E22B68007797D1 /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5FB00916E22B68007797D1 /* NSString+URLEncode.m */; };
 		4F5FB00E16E22EC9007797D1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FB00D16E22EC8007797D1 /* QuartzCore.framework */; };
 		4F5FB01016E22EF0007797D1 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FB00F16E22EF0007797D1 /* CoreImage.framework */; };
-		4FA1225A16E4BA3400FE27C2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4FA1225916E4BA3400FE27C2 /* README.md */; };
+		4FA1225316E3BEED00FE27C2 /* Printer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA1225216E3BEED00FE27C2 /* Printer.m */; };
+		4FA1225716E3C71F00FE27C2 /* LMNEditPrinterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA1225516E3C71F00FE27C2 /* LMNEditPrinterViewController.m */; };
+		4FA1225816E3C71F00FE27C2 /* LMNEditPrinterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA1225616E3C71F00FE27C2 /* LMNEditPrinterViewController.xib */; };
 		4FDC159716E252470047D0A1 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FDC158D16E252470047D0A1 /* Icon-72.png */; };
 		4FDC159816E252470047D0A1 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FDC158E16E252470047D0A1 /* Icon-72@2x.png */; };
 		4FDC159916E252470047D0A1 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FDC158F16E252470047D0A1 /* Icon-Small-50.png */; };
@@ -92,7 +94,11 @@
 		4F5FB00916E22B68007797D1 /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncode.m"; sourceTree = "<group>"; };
 		4F5FB00D16E22EC8007797D1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4F5FB00F16E22EF0007797D1 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		4FA1225916E4BA3400FE27C2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		4FA1225116E3BEED00FE27C2 /* Printer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Printer.h; path = Model/Printer.h; sourceTree = "<group>"; };
+		4FA1225216E3BEED00FE27C2 /* Printer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Printer.m; path = Model/Printer.m; sourceTree = "<group>"; };
+		4FA1225416E3C71F00FE27C2 /* LMNEditPrinterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMNEditPrinterViewController.h; path = "View Controllers/LMNEditPrinterViewController.h"; sourceTree = "<group>"; };
+		4FA1225516E3C71F00FE27C2 /* LMNEditPrinterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMNEditPrinterViewController.m; path = "View Controllers/LMNEditPrinterViewController.m"; sourceTree = "<group>"; };
+		4FA1225616E3C71F00FE27C2 /* LMNEditPrinterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LMNEditPrinterViewController.xib; path = "View Controllers/LMNEditPrinterViewController.xib"; sourceTree = "<group>"; };
 		4FDC158D16E252470047D0A1 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Little Image Printer/Icon-72.png"; sourceTree = "<group>"; };
 		4FDC158E16E252470047D0A1 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "Little Image Printer/Icon-72@2x.png"; sourceTree = "<group>"; };
 		4FDC158F16E252470047D0A1 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Little Image Printer/Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -130,7 +136,6 @@
 		4F5FAFAD16E217C5007797D1 = {
 			isa = PBXGroup;
 			children = (
-				4FA1225916E4BA3400FE27C2 /* README.md */,
 				4FEC7AC716E256B80005B013 /* 61-brightness@2x.png */,
 				4FEC7AC816E256B80005B013 /* 62-contrast@2x.png */,
 				4FDC158D16E252470047D0A1 /* Icon-72.png */,
@@ -216,6 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				4F5FAFE116E21841007797D1 /* LittleImagePrinter.xcdatamodeld */,
+				4FA1225116E3BEED00FE27C2 /* Printer.h */,
+				4FA1225216E3BEED00FE27C2 /* Printer.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -228,6 +235,9 @@
 				4F5FAFEF16E21C7D007797D1 /* LMNManagePrinterViewController.h */,
 				4F5FAFF016E21C7D007797D1 /* LMNManagePrinterViewController.m */,
 				4F5FAFF116E21C7D007797D1 /* LMNManagePrinterViewController.xib */,
+				4FA1225416E3C71F00FE27C2 /* LMNEditPrinterViewController.h */,
+				4FA1225516E3C71F00FE27C2 /* LMNEditPrinterViewController.m */,
+				4FA1225616E3C71F00FE27C2 /* LMNEditPrinterViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -344,7 +354,7 @@
 				4FDC15A516E254B10047D0A1 /* LMNAdjusterViewController.xib in Resources */,
 				4FEC7AC916E256B80005B013 /* 61-brightness@2x.png in Resources */,
 				4FEC7ACA16E256B80005B013 /* 62-contrast@2x.png in Resources */,
-				4FA1225A16E4BA3400FE27C2 /* README.md in Resources */,
+				4FA1225816E3C71F00FE27C2 /* LMNEditPrinterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +394,8 @@
 				4F5FB00B16E22B68007797D1 /* NSString+Base64.m in Sources */,
 				4F5FB00C16E22B68007797D1 /* NSString+URLEncode.m in Sources */,
 				4FDC15A416E254B10047D0A1 /* LMNAdjusterViewController.m in Sources */,
+				4FA1225316E3BEED00FE27C2 /* Printer.m in Sources */,
+				4FA1225716E3C71F00FE27C2 /* LMNEditPrinterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

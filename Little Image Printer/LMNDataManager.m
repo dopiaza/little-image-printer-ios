@@ -15,6 +15,7 @@ static LMNDataManager *_sharedManager = nil;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
+@synthesize printersFetchedResultsController = _printersFetchedResultsController;
 
 + (LMNDataManager *)sharedManager
 {
@@ -23,6 +24,11 @@ static LMNDataManager *_sharedManager = nil;
         _sharedManager = [[LMNDataManager alloc] init];
     }
     return _sharedManager;
+}
+
+- (Printer *)createPrinter
+{
+    return [self insertNewObjectForEntityForName:@"Printer"];
 }
 
 #pragma mark - Core Data
@@ -85,7 +91,7 @@ static LMNDataManager *_sharedManager = nil;
         return _managedObjectModel;
     }
     
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"BrooklynGo" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"LittleImagePrinter" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     
     return _managedObjectModel;
@@ -98,7 +104,7 @@ static LMNDataManager *_sharedManager = nil;
         return _persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"BrooklynGo.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"LittleImagePrinter"];
     
     NSError *error = nil;
     
@@ -176,7 +182,7 @@ static LMNDataManager *_sharedManager = nil;
 
 -(void)fatalError:(NSError *)error
 {
-    [self alertWithTitle:@"Error" message:@"A serious error occured and GO cannot continue. Please close the application by pressing the Home button."];
+    [self alertWithTitle:@"Error" message:@"A serious error occured and Little Image Printer cannot continue. Please close the application by pressing the Home button."];
     NSLog(@"Fatal error %@, %@", error, [error userInfo]);
     abort();
 }
@@ -194,5 +200,23 @@ static LMNDataManager *_sharedManager = nil;
     });
 }
 
+
+- (NSFetchedResultsController *)printersFetchedResultsController
+{
+    if (_printersFetchedResultsController == nil)
+    {
+        NSFetchRequest *fr = [self newFetchRequestForEntityNamed:@"Printer"];
+        NSSortDescriptor *nameSort = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+        fr.sortDescriptors = [NSArray arrayWithObject:nameSort];
+        
+        _printersFetchedResultsController = [[NSFetchedResultsController alloc]
+                                             initWithFetchRequest:fr
+                                             managedObjectContext:self.managedObjectContext
+                                               sectionNameKeyPath:nil
+                                                        cacheName:nil];
+    }
+    
+    return _printersFetchedResultsController;
+}
 
 @end

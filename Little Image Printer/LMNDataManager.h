@@ -7,13 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Printer.h"
 
 @interface LMNDataManager : NSObject
 
 + (LMNDataManager *)sharedManager;
 
+- (Printer *) createPrinter;
+-(void)saveContext;
+
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+@property (nonatomic, retain, readonly) NSFetchedResultsController *printersFetchedResultsController;
 
 @end

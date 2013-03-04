@@ -10,6 +10,7 @@
 #import "LMNImageProcessor.h"
 #import "LMNPrinterManager.h"
 #import "LMNAdjusterViewController.h"
+#import "LMNManagePrinterViewController.h"
 
 @interface LMNViewController ()
 
@@ -34,7 +35,8 @@
 
 - (IBAction)managePrinters:(id)sender
 {
-    
+    LMNManagePrinterViewController *vc = [[LMNManagePrinterViewController alloc] initWithNibName:@"LMNManagePrinterViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)takePhoto:(id)sender

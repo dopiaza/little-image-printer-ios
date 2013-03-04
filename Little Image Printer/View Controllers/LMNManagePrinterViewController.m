@@ -7,6 +7,9 @@
 //
 
 #import "LMNManagePrinterViewController.h"
+#import "LMNDataManager.h"
+#import "Printer.h"
+#import "LMNEditPrinterViewController.h"
 
 @interface LMNManagePrinterViewController ()
 
@@ -28,7 +31,12 @@
 {
     [super viewDidLoad];
 
-    self.addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPrinter:)];
+    self.fetchedResultsController = [LMNDataManager sharedManager].printersFetchedResultsController;
+    
+    self.addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                  target:self
+                                                                  action:@selector(addPrinter:)];
+    self.navigationItem.rightBarButtonItem = self.addButton;
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,7 +47,21 @@
 
 - (void)addPrinter:(id)sender
 {
+    LMNEditPrinterViewController *vc = [[LMNEditPrinterViewController alloc] initWithNibName:@"LMNEditPrinterViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(UITableViewCell *)newCellWithReuseIdentifier:(NSString *)cellIdentifier
+{
+    return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+}
+
+-(void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    Printer *printer = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
+    cell.textLabel.text = printer.name;
+    cell.detailTextLabel.text = printer.code;
 }
 
 @end
