@@ -34,6 +34,9 @@
     self.imageProcessor = [[DPZImageProcessor alloc] initWithSourceImage:self.sourceImage];
     self.image.image = [self.imageProcessor processImage];
     [self.image setNeedsDisplay];
+    
+    UIBarButtonItem *printButton = [[UIBarButtonItem alloc] initWithTitle:@"Print" style:UIBarButtonItemStyleBordered target:self action:@selector(print)];
+    self.navigationItem.rightBarButtonItem = printButton;
 }
 
 - (void)didReceiveMemoryWarning

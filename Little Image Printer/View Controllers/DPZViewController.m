@@ -79,7 +79,6 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    //NSURL *url = [info objectForKey:UIImagePickerControllerReferenceURL];
     self.image = [info objectForKey:UIImagePickerControllerEditedImage];
     if (self.image == nil)
     {
@@ -88,12 +87,10 @@
     
     if (self.image)
     {
-        //[[DPZPrinterManager sharedPrinterManager] printImage:self.image];
         if (self.usingCamera)
         {
             UIImageWriteToSavedPhotosAlbum(self.image, nil, nil, nil);
         }
-        //[self performSelectorOnMainThread:@selector(runAdjuster:) withObject:self.image waitUntilDone:NO];
     }
     
     UIImage *img = self.image;
@@ -109,7 +106,7 @@
 {
     DPZAdjusterViewController *vc = [[DPZAdjusterViewController alloc] initWithNibName:@"DPZAdjusterViewController" bundle:nil];
     vc.sourceImage = image;
-    [self presentViewController:vc animated:YES completion:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
