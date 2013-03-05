@@ -17,6 +17,7 @@ General overhaul and tidy up of the code.
 - Use navigation controller instead of modal popups
 - Enable/disable buttons as appropriate
 - Tidy up directory structure
+- iPhone only (for now)
 
 ## v0.1: 4th March 2013
 
