@@ -89,7 +89,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">61-brightness@2x.png</string>
+							<string key="NSResourceName">Brightness.png</string>
 						</object>
 					</object>
 					<object class="IBUIImageView" id="620803826">
@@ -104,7 +104,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">62-contrast@2x.png</string>
+							<string key="NSResourceName">Contrast.png</string>
 						</object>
 					</object>
 				</array>
@@ -368,7 +368,7 @@
 								<float key="scoringTypeFloat">29</float>
 								<int key="contentType">3</int>
 							</object>
-							<object class="IBNSLayoutConstraint" id="973803192">
+							<object class="IBNSLayoutConstraint" id="567194977">
 								<reference key="firstItem" ref="1004830108"/>
 								<int key="firstAttribute">3</int>
 								<int key="relation">0</int>
@@ -636,7 +636,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">73</int>
-						<reference key="object" ref="973803192"/>
+						<reference key="object" ref="567194977"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>
@@ -650,7 +650,7 @@
 				<array class="NSMutableArray" key="1.IBViewMetadataConstraints">
 					<reference ref="219096960"/>
 					<reference ref="772398095"/>
-					<reference ref="973803192"/>
+					<reference ref="567194977"/>
 					<reference ref="717626046"/>
 					<reference ref="585600539"/>
 					<reference ref="1016370150"/>
@@ -773,8 +773,8 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="61-brightness@2x.png">{40, 40}</string>
-			<string key="62-contrast@2x.png">{40, 40}</string>
+			<string key="Brightness.png">{126, 126}</string>
+			<string key="Contrast.png">{126, 126}</string>
 		</dictionary>
 		<bool key="IBDocument.UseAutolayout">YES</bool>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
