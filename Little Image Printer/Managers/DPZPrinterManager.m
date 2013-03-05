@@ -175,7 +175,6 @@ static DPZPrinterManager *_sharedPrinterManager;
     [urlRequest setHTTPMethod:@"POST"];
     [urlRequest setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
     
-    NSLog(@"Start connection");
     self.connection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:NO];
     [self.connection start];
     
