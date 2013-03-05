@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F1CBA4C16E603500023C118 /* increment-build.sh in Resources */ = {isa = PBXBuildFile; fileRef = 4F1CBA4B16E603500023C118 /* increment-build.sh */; };
 		4F5FAFBA16E217C5007797D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FAFB916E217C5007797D1 /* UIKit.framework */; };
 		4F5FAFBC16E217C5007797D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FAFBB16E217C5007797D1 /* Foundation.framework */; };
 		4F5FAFBE16E217C5007797D1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FAFBD16E217C5007797D1 /* CoreGraphics.framework */; };
@@ -18,7 +19,6 @@
 		4F5FAFD016E217C5007797D1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFCF16E217C5007797D1 /* Default-568h@2x.png */; };
 		4F5FAFD616E217C5007797D1 /* DPZViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFD416E217C5007797D1 /* DPZViewController_iPhone.xib */; };
 		4F5FAFD916E217C5007797D1 /* DPZViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFD716E217C5007797D1 /* DPZViewController_iPad.xib */; };
-		4F5FAFE816E21A31007797D1 /* increment-build.sh in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFE716E21A31007797D1 /* increment-build.sh */; };
 		4F5FAFEB16E21B5B007797D1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FAFEA16E21B5B007797D1 /* CoreData.framework */; };
 		4F5FAFF216E21C7D007797D1 /* DPZManagePrinterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5FAFF016E21C7D007797D1 /* DPZManagePrinterViewController.m */; };
 		4F5FAFF316E21C7D007797D1 /* DPZManagePrinterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFF116E21C7D007797D1 /* DPZManagePrinterViewController.xib */; };
@@ -57,6 +57,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F1CBA4B16E603500023C118 /* increment-build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "increment-build.sh"; sourceTree = "<group>"; };
 		4F5FAFB616E217C5007797D1 /* Little Image Printer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Image Printer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5FAFB916E217C5007797D1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4F5FAFBB16E217C5007797D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -72,7 +73,6 @@
 		4F5FAFCF16E217C5007797D1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4F5FAFD516E217C5007797D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DPZViewController_iPhone.xib; sourceTree = "<group>"; };
 		4F5FAFD816E217C5007797D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DPZViewController_iPad.xib; sourceTree = "<group>"; };
-		4F5FAFE716E21A31007797D1 /* increment-build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "increment-build.sh"; sourceTree = "<group>"; };
 		4F5FAFEA16E21B5B007797D1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4F5FAFEF16E21C7D007797D1 /* DPZManagePrinterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPZManagePrinterViewController.h; path = "View Controllers/DPZManagePrinterViewController.h"; sourceTree = "<group>"; };
 		4F5FAFF016E21C7D007797D1 /* DPZManagePrinterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPZManagePrinterViewController.m; path = "View Controllers/DPZManagePrinterViewController.m"; sourceTree = "<group>"; };
@@ -140,10 +140,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4F5FAFAD16E217C5007797D1 = {
+		4F1CBA4816E603130023C118 /* Docs */ = {
 			isa = PBXGroup;
 			children = (
 				4FA26A2F16E5733700C08B5A /* README.md */,
+			);
+			name = Docs;
+			sourceTree = "<group>";
+		};
+		4F1CBA4916E603210023C118 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
 				4FDC158D16E252470047D0A1 /* Icon-72.png */,
 				4FDC158E16E252470047D0A1 /* Icon-72@2x.png */,
 				4FDC158F16E252470047D0A1 /* Icon-Small-50.png */,
@@ -154,8 +161,25 @@
 				4FDC159416E252470047D0A1 /* Icon@2x.png */,
 				4FDC159516E252470047D0A1 /* iTunesArtwork */,
 				4FDC159616E252470047D0A1 /* iTunesArtwork@2x */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		4F1CBA4A16E603500023C118 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				4F1CBA4B16E603500023C118 /* increment-build.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		4F5FAFAD16E217C5007797D1 = {
+			isa = PBXGroup;
+			children = (
+				4F1CBA4A16E603500023C118 /* Scripts */,
+				4F1CBA4816E603130023C118 /* Docs */,
+				4F1CBA4916E603210023C118 /* Icons */,
 				4F5FB00116E22B68007797D1 /* Libraries */,
-				4F5FAFE716E21A31007797D1 /* increment-build.sh */,
 				4F5FAFBF16E217C5007797D1 /* Little Image Printer */,
 				4F5FAFB816E217C5007797D1 /* Frameworks */,
 				4F5FAFB716E217C5007797D1 /* Products */,
@@ -372,7 +396,6 @@
 				4F5FAFD016E217C5007797D1 /* Default-568h@2x.png in Resources */,
 				4F5FAFD616E217C5007797D1 /* DPZViewController_iPhone.xib in Resources */,
 				4F5FAFD916E217C5007797D1 /* DPZViewController_iPad.xib in Resources */,
-				4F5FAFE816E21A31007797D1 /* increment-build.sh in Resources */,
 				4F5FAFF316E21C7D007797D1 /* DPZManagePrinterViewController.xib in Resources */,
 				4F5FAFFD16E22637007797D1 /* print.html in Resources */,
 				4FDC159716E252470047D0A1 /* Icon-72.png in Resources */,
@@ -392,6 +415,7 @@
 				4FA26A3716E5806700C08B5A /* Brightness@2x.png in Resources */,
 				4FA26A3816E5806700C08B5A /* Contrast.png in Resources */,
 				4FA26A3916E5806700C08B5A /* Contrast@2x.png in Resources */,
+				4F1CBA4C16E603500023C118 /* increment-build.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +433,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PROJECT_DIR}/increment-build.sh\"";
+			shellScript = "\"${PROJECT_DIR}/Scripts/increment-build.sh\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -531,6 +555,7 @@
 				GCC_PREFIX_HEADER = "Little Image Printer/Little Image Printer-Prefix.pch";
 				INFOPLIST_FILE = "Little Image Printer/Little Image Printer-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -542,6 +567,7 @@
 				GCC_PREFIX_HEADER = "Little Image Printer/Little Image Printer-Prefix.pch";
 				INFOPLIST_FILE = "Little Image Printer/Little Image Printer-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
