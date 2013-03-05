@@ -1,21 +1,21 @@
 //
-//  LMNManagePrinterViewController.m
+//  DPZManagePrinterViewController.m
 //  Little Image Printer
 //
 //  Created by David Wilkinson on 02/03/2013.
-//  Copyright (c) 2013 Lumen Services Limited. All rights reserved.
+//  Copyright (c) 2013 David Wilkinson. All rights reserved.
 //
 
-#import "LMNManagePrinterViewController.h"
-#import "LMNPrinterManager.h"
-#import "LMNEditPrinterViewController.h"
+#import "DPZManagePrinterViewController.h"
+#import "DPZPrinterManager.h"
+#import "DPZEditPrinterViewController.h"
 #import "Printer.h"
 
-@interface LMNManagePrinterViewController ()
+@interface DPZManagePrinterViewController ()
 
 @end
 
-@implementation LMNManagePrinterViewController
+@implementation DPZManagePrinterViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,7 +31,7 @@
 {
     [super viewDidLoad];
 
-    self.fetchedResultsController = [LMNPrinterManager sharedPrinterManager].printersFetchedResultsController;
+    self.fetchedResultsController = [DPZPrinterManager sharedPrinterManager].printersFetchedResultsController;
     
     self.addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                   target:self
@@ -47,7 +47,7 @@
 
 - (void)addPrinter:(id)sender
 {
-    LMNEditPrinterViewController *vc = [[LMNEditPrinterViewController alloc] initWithNibName:@"LMNEditPrinterViewController" bundle:nil];
+    DPZEditPrinterViewController *vc = [[DPZEditPrinterViewController alloc] initWithNibName:@"DPZEditPrinterViewController" bundle:nil];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -68,7 +68,7 @@
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     Printer *printer = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    LMNEditPrinterViewController *vc = [[LMNEditPrinterViewController alloc] initWithNibName:@"LMNEditPrinterViewController" bundle:nil];
+    DPZEditPrinterViewController *vc = [[DPZEditPrinterViewController alloc] initWithNibName:@"DPZEditPrinterViewController" bundle:nil];
     vc.printer = printer;
     [self.navigationController pushViewController:vc animated:YES];    
 }
@@ -76,7 +76,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Printer *printer = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [LMNPrinterManager sharedPrinterManager].activePrinter = printer;
+    [DPZPrinterManager sharedPrinterManager].activePrinter = printer;
     [self.navigationController popViewControllerAnimated:YES];
 }
 

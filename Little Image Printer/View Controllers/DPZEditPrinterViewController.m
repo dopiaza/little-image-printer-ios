@@ -1,20 +1,20 @@
 //
-//  LMNEditPrinterViewController.m
+//  DPZEditPrinterViewController.m
 //  Little Image Printer
 //
 //  Created by David Wilkinson on 03/03/2013.
-//  Copyright (c) 2013 Lumen Services Limited. All rights reserved.
+//  Copyright (c) 2013 David Wilkinson. All rights reserved.
 //
 
-#import "LMNEditPrinterViewController.h"
-#import "LMNDataManager.h"
-#import "LMNPrinterManager.h"
+#import "DPZEditPrinterViewController.h"
+#import "DPZDataManager.h"
+#import "DPZPrinterManager.h"
 
-@interface LMNEditPrinterViewController ()
+@interface DPZEditPrinterViewController ()
 
 @end
 
-@implementation LMNEditPrinterViewController
+@implementation DPZEditPrinterViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,10 +48,10 @@
 
 - (void)save
 {
-    LMNDataManager *dm = [LMNDataManager sharedManager];
+    DPZDataManager *dm = [DPZDataManager sharedManager];
     if (self.printer == nil)
     {
-        self.printer = [[LMNPrinterManager sharedPrinterManager] createPrinter];
+        self.printer = [[DPZPrinterManager sharedPrinterManager] createPrinter];
     }
     self.printer.name = self.name.text;
     self.printer.code = self.code.text;
@@ -81,7 +81,7 @@
         case 1:
         {
             // Delete
-            LMNDataManager *dm = [LMNDataManager sharedManager];
+            DPZDataManager *dm = [DPZDataManager sharedManager];
             [dm deleteObject:self.printer];
             [dm saveContext];
             [self.navigationController popViewControllerAnimated:YES];

@@ -1,16 +1,16 @@
 //
-//  LMNDataManager.h
+//  DPZDataManager.h
 //  Little Image Printer
 //
 //  Created by David Wilkinson on 02/03/2013.
-//  Copyright (c) 2013 Lumen Services Limited. All rights reserved.
+//  Copyright (c) 2013 David Wilkinson. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface LMNDataManager : NSObject
+@interface DPZDataManager : NSObject
 
-+ (LMNDataManager *)sharedManager;
++ (DPZDataManager *)sharedManager;
 
 - (id)getAllFromFetchRequest:(NSFetchRequest *)fetchRequest;
 - (id)getOneFromFetchRequest:(NSFetchRequest *)fetchRequest;

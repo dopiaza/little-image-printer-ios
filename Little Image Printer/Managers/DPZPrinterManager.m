@@ -1,36 +1,36 @@
 //
-//  LMNPrinterManager.m
+//  DPZPrinterManager.m
 //  Little Image Printer
 //
 //  Created by David Wilkinson on 02/03/2013.
-//  Copyright (c) 2013 Lumen Services Limited. All rights reserved.
+//  Copyright (c) 2013 David Wilkinson. All rights reserved.
 //
 
-#import "LMNPrinterManager.h"
-#import "LMNDataManager.h"
-#import "LMNImageProcessor.h"
+#import "DPZPrinterManager.h"
+#import "DPZDataManager.h"
+#import "DPZImageProcessor.h"
 #import "NSData+Base64.h"
 #import "NSString+URLEncode.h"
 #import "Printer.h"
 
-static LMNPrinterManager *_sharedPrinterManager;
+static DPZPrinterManager *_sharedPrinterManager;
 
-@interface LMNPrinterManager ()
+@interface DPZPrinterManager ()
 
-@property (nonatomic, strong) LMNImageProcessor *imageProcessor;
+@property (nonatomic, strong) DPZImageProcessor *imageProcessor;
 @property (nonatomic, strong) NSURLConnection *connection;
 
 @end
 
-@implementation LMNPrinterManager
+@implementation DPZPrinterManager
 
 @synthesize printersFetchedResultsController = _printersFetchedResultsController;
 
-+ (LMNPrinterManager *)sharedPrinterManager
++ (DPZPrinterManager *)sharedPrinterManager
 {
     if (_sharedPrinterManager == nil)
     {
-        _sharedPrinterManager = [[LMNPrinterManager alloc] init];
+        _sharedPrinterManager = [[DPZPrinterManager alloc] init];
     }
     
     return _sharedPrinterManager;
@@ -74,20 +74,20 @@ static LMNPrinterManager *_sharedPrinterManager;
     }
     activePrinter.active = [NSNumber numberWithBool:YES];
 
-    LMNDataManager *dm = [LMNDataManager sharedManager];
+    DPZDataManager *dm = [DPZDataManager sharedManager];
     [dm saveContext];
 }
 
 
 - (Printer *)createPrinter
 {
-    LMNDataManager *dm = [LMNDataManager sharedManager];
+    DPZDataManager *dm = [DPZDataManager sharedManager];
     return [dm insertNewObjectForEntityForName:@"Printer"];
 }
 
 - (NSArray *)printers
 {
-    LMNDataManager *dm = [LMNDataManager sharedManager];
+    DPZDataManager *dm = [DPZDataManager sharedManager];
 
     NSFetchRequest *fr = [dm newFetchRequestForEntityNamed:@"Printer"];
     NSSortDescriptor *nameSort = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
@@ -100,7 +100,7 @@ static LMNPrinterManager *_sharedPrinterManager;
 {
     if (_printersFetchedResultsController == nil)
     {
-        LMNDataManager *dm = [LMNDataManager sharedManager];
+        DPZDataManager *dm = [DPZDataManager sharedManager];
         NSFetchRequest *fr = [dm newFetchRequestForEntityNamed:@"Printer"];
         NSSortDescriptor *nameSort = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
         fr.sortDescriptors = [NSArray arrayWithObject:nameSort];
@@ -119,7 +119,7 @@ static LMNPrinterManager *_sharedPrinterManager;
 {
     if (imageURL)
     {
-        self.imageProcessor = [[LMNImageProcessor alloc] initWithSourceImageURL:imageURL];
+        self.imageProcessor = [[DPZImageProcessor alloc] initWithSourceImageURL:imageURL];
         [self doPrint];
     }
 }
@@ -128,7 +128,7 @@ static LMNPrinterManager *_sharedPrinterManager;
 {
     if (image)
     {
-        self.imageProcessor = [[LMNImageProcessor alloc] initWithSourceImage:image];        
+        self.imageProcessor = [[DPZImageProcessor alloc] initWithSourceImage:image];        
         [self doPrint];
     }
 }

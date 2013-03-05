@@ -1,26 +1,26 @@
 //
-//  LMNViewController.m
+//  DPZViewController.m
 //  Little Image Printer
 //
 //  Created by David Wilkinson on 02/03/2013.
-//  Copyright (c) 2013 Lumen Services Limited. All rights reserved.
+//  Copyright (c) 2013 David Wilkinson. All rights reserved.
 //
 
-#import "LMNViewController.h"
-#import "LMNImageProcessor.h"
-#import "LMNPrinterManager.h"
-#import "LMNAdjusterViewController.h"
-#import "LMNManagePrinterViewController.h"
+#import "DPZViewController.h"
+#import "DPZImageProcessor.h"
+#import "DPZPrinterManager.h"
+#import "DPZAdjusterViewController.h"
+#import "DPZManagePrinterViewController.h"
 #import "Printer.h"
 
-@interface LMNViewController ()
+@interface DPZViewController ()
 
 @property (nonatomic, assign) BOOL usingCamera;
 @property (nonatomic, assign) UIImage *image;
 
 @end
 
-@implementation LMNViewController
+@implementation DPZViewController
 
 - (void)viewDidLoad
 {
@@ -43,13 +43,13 @@
 
 - (void)refresh
 {
-    Printer *printer = [LMNPrinterManager sharedPrinterManager].activePrinter;
+    Printer *printer = [DPZPrinterManager sharedPrinterManager].activePrinter;
     self.printerNameLabel.text = printer ? printer.name : @"";
 }
 
 - (IBAction)managePrinters:(id)sender
 {
-    LMNManagePrinterViewController *vc = [[LMNManagePrinterViewController alloc] initWithNibName:@"LMNManagePrinterViewController" bundle:nil];
+    DPZManagePrinterViewController *vc = [[DPZManagePrinterViewController alloc] initWithNibName:@"DPZManagePrinterViewController" bundle:nil];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -83,7 +83,7 @@
     
     if (self.image)
     {
-        //[[LMNPrinterManager sharedPrinterManager] printImage:self.image];
+        //[[DPZPrinterManager sharedPrinterManager] printImage:self.image];
         if (self.usingCamera)
         {
             UIImageWriteToSavedPhotosAlbum(self.image, nil, nil, nil);
@@ -102,7 +102,7 @@
 
 - (void)runAdjuster:(UIImage *)image
 {
-    LMNAdjusterViewController *vc = [[LMNAdjusterViewController alloc] initWithNibName:@"LMNAdjusterViewController" bundle:nil];
+    DPZAdjusterViewController *vc = [[DPZAdjusterViewController alloc] initWithNibName:@"DPZAdjusterViewController" bundle:nil];
     vc.sourceImage = image;
     [self presentViewController:vc animated:YES completion:nil];
 }

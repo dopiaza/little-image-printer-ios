@@ -3,12 +3,12 @@
 //  
 //
 //  Created by David Wilkinson on 09/04/2012.
-//  Copyright (c) 2012 Lumen Services Limited. All rights reserved.
+//  Copyright (c) 2013 David Wilkinson. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface FetchedResultsTableViewController : UIViewController
+@interface DPZFetchedResultsTableViewController : UIViewController
 <NSFetchedResultsControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 
 -(UITableViewCell *)newCellWithReuseIdentifier:(NSString *)cellIdentifier;

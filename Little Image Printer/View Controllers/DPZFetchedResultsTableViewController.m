@@ -2,16 +2,16 @@
 //  FetchedResultsViewController.m
 //
 //  Created by David Wilkinson on 09/04/2012.
-//  Copyright (c) 2012 Lumen Services Limited. All rights reserved.
+//  Copyright (c) 2013 David Wilkinson. All rights reserved.
 //
 
-#import "FetchedResultsTableViewController.h"
+#import "DPZFetchedResultsTableViewController.h"
 
-@interface FetchedResultsTableViewController ()
+@interface DPZFetchedResultsTableViewController ()
 
 @end
 
-@implementation FetchedResultsTableViewController
+@implementation DPZFetchedResultsTableViewController
 
 @synthesize fetchedResultsController = _fetchedResultsController;
 @synthesize tableView = _tableView;

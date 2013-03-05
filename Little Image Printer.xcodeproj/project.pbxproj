@@ -12,16 +12,16 @@
 		4F5FAFBE16E217C5007797D1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FAFBD16E217C5007797D1 /* CoreGraphics.framework */; };
 		4F5FAFC416E217C5007797D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFC216E217C5007797D1 /* InfoPlist.strings */; };
 		4F5FAFC616E217C5007797D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5FAFC516E217C5007797D1 /* main.m */; };
-		4F5FAFCA16E217C5007797D1 /* LMNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5FAFC916E217C5007797D1 /* LMNAppDelegate.m */; };
+		4F5FAFCA16E217C5007797D1 /* DPZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5FAFC916E217C5007797D1 /* DPZAppDelegate.m */; };
 		4F5FAFCC16E217C5007797D1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFCB16E217C5007797D1 /* Default.png */; };
 		4F5FAFCE16E217C5007797D1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFCD16E217C5007797D1 /* Default@2x.png */; };
 		4F5FAFD016E217C5007797D1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFCF16E217C5007797D1 /* Default-568h@2x.png */; };
-		4F5FAFD616E217C5007797D1 /* LMNViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFD416E217C5007797D1 /* LMNViewController_iPhone.xib */; };
-		4F5FAFD916E217C5007797D1 /* LMNViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFD716E217C5007797D1 /* LMNViewController_iPad.xib */; };
+		4F5FAFD616E217C5007797D1 /* DPZViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFD416E217C5007797D1 /* DPZViewController_iPhone.xib */; };
+		4F5FAFD916E217C5007797D1 /* DPZViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFD716E217C5007797D1 /* DPZViewController_iPad.xib */; };
 		4F5FAFE816E21A31007797D1 /* increment-build.sh in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFE716E21A31007797D1 /* increment-build.sh */; };
 		4F5FAFEB16E21B5B007797D1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FAFEA16E21B5B007797D1 /* CoreData.framework */; };
-		4F5FAFF216E21C7D007797D1 /* LMNManagePrinterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5FAFF016E21C7D007797D1 /* LMNManagePrinterViewController.m */; };
-		4F5FAFF316E21C7D007797D1 /* LMNManagePrinterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFF116E21C7D007797D1 /* LMNManagePrinterViewController.xib */; };
+		4F5FAFF216E21C7D007797D1 /* DPZManagePrinterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5FAFF016E21C7D007797D1 /* DPZManagePrinterViewController.m */; };
+		4F5FAFF316E21C7D007797D1 /* DPZManagePrinterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFF116E21C7D007797D1 /* DPZManagePrinterViewController.xib */; };
 		4F5FAFFD16E22637007797D1 /* print.html in Resources */ = {isa = PBXBuildFile; fileRef = 4F5FAFFC16E22637007797D1 /* print.html */; };
 		4F5FB00A16E22B68007797D1 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5FB00416E22B68007797D1 /* NSData+Base64.m */; };
 		4F5FB00B16E22B68007797D1 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5FB00616E22B68007797D1 /* NSString+Base64.m */; };
@@ -30,15 +30,15 @@
 		4F5FB01016E22EF0007797D1 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FB00F16E22EF0007797D1 /* CoreImage.framework */; };
 		4F9E777716E55E0E0036803A /* LittleImagePrinter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E777216E55E0E0036803A /* LittleImagePrinter.xcdatamodeld */; };
 		4F9E777B16E55E650036803A /* Printer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E777A16E55E650036803A /* Printer.m */; };
-		4FA1225716E3C71F00FE27C2 /* LMNEditPrinterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA1225516E3C71F00FE27C2 /* LMNEditPrinterViewController.m */; };
-		4FA1225816E3C71F00FE27C2 /* LMNEditPrinterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA1225616E3C71F00FE27C2 /* LMNEditPrinterViewController.xib */; };
-		4FA26A2016E56B2C00C08B5A /* FetchedResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA26A1A16E56B2C00C08B5A /* FetchedResultsTableViewController.m */; };
-		4FA26A2116E56B2C00C08B5A /* LMNAdjusterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA26A1C16E56B2C00C08B5A /* LMNAdjusterViewController.m */; };
-		4FA26A2216E56B2C00C08B5A /* LMNAdjusterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA26A1D16E56B2C00C08B5A /* LMNAdjusterViewController.xib */; };
-		4FA26A2316E56B2C00C08B5A /* LMNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA26A1F16E56B2C00C08B5A /* LMNViewController.m */; };
-		4FA26A2C16E56B5800C08B5A /* LMNImageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA26A2616E56B5800C08B5A /* LMNImageProcessor.m */; };
-		4FA26A2D16E56B5800C08B5A /* LMNDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA26A2916E56B5800C08B5A /* LMNDataManager.m */; };
-		4FA26A2E16E56B5800C08B5A /* LMNPrinterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA26A2B16E56B5800C08B5A /* LMNPrinterManager.m */; };
+		4FA1225716E3C71F00FE27C2 /* DPZEditPrinterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA1225516E3C71F00FE27C2 /* DPZEditPrinterViewController.m */; };
+		4FA1225816E3C71F00FE27C2 /* DPZEditPrinterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA1225616E3C71F00FE27C2 /* DPZEditPrinterViewController.xib */; };
+		4FA26A2016E56B2C00C08B5A /* DPZFetchedResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA26A1A16E56B2C00C08B5A /* DPZFetchedResultsTableViewController.m */; };
+		4FA26A2116E56B2C00C08B5A /* DPZAdjusterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA26A1C16E56B2C00C08B5A /* DPZAdjusterViewController.m */; };
+		4FA26A2216E56B2C00C08B5A /* DPZAdjusterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA26A1D16E56B2C00C08B5A /* DPZAdjusterViewController.xib */; };
+		4FA26A2316E56B2C00C08B5A /* DPZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA26A1F16E56B2C00C08B5A /* DPZViewController.m */; };
+		4FA26A2C16E56B5800C08B5A /* DPZImageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA26A2616E56B5800C08B5A /* DPZImageProcessor.m */; };
+		4FA26A2D16E56B5800C08B5A /* DPZDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA26A2916E56B5800C08B5A /* DPZDataManager.m */; };
+		4FA26A2E16E56B5800C08B5A /* DPZPrinterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA26A2B16E56B5800C08B5A /* DPZPrinterManager.m */; };
 		4FDC159716E252470047D0A1 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FDC158D16E252470047D0A1 /* Icon-72.png */; };
 		4FDC159816E252470047D0A1 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FDC158E16E252470047D0A1 /* Icon-72@2x.png */; };
 		4FDC159916E252470047D0A1 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FDC158F16E252470047D0A1 /* Icon-Small-50.png */; };
@@ -62,18 +62,18 @@
 		4F5FAFC316E217C5007797D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4F5FAFC516E217C5007797D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4F5FAFC716E217C5007797D1 /* Little Image Printer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Little Image Printer-Prefix.pch"; sourceTree = "<group>"; };
-		4F5FAFC816E217C5007797D1 /* LMNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMNAppDelegate.h; sourceTree = "<group>"; };
-		4F5FAFC916E217C5007797D1 /* LMNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMNAppDelegate.m; sourceTree = "<group>"; };
+		4F5FAFC816E217C5007797D1 /* DPZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPZAppDelegate.h; sourceTree = "<group>"; };
+		4F5FAFC916E217C5007797D1 /* DPZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DPZAppDelegate.m; sourceTree = "<group>"; };
 		4F5FAFCB16E217C5007797D1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4F5FAFCD16E217C5007797D1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4F5FAFCF16E217C5007797D1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		4F5FAFD516E217C5007797D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LMNViewController_iPhone.xib; sourceTree = "<group>"; };
-		4F5FAFD816E217C5007797D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LMNViewController_iPad.xib; sourceTree = "<group>"; };
+		4F5FAFD516E217C5007797D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DPZViewController_iPhone.xib; sourceTree = "<group>"; };
+		4F5FAFD816E217C5007797D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DPZViewController_iPad.xib; sourceTree = "<group>"; };
 		4F5FAFE716E21A31007797D1 /* increment-build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "increment-build.sh"; sourceTree = "<group>"; };
 		4F5FAFEA16E21B5B007797D1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		4F5FAFEF16E21C7D007797D1 /* LMNManagePrinterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMNManagePrinterViewController.h; path = "View Controllers/LMNManagePrinterViewController.h"; sourceTree = "<group>"; };
-		4F5FAFF016E21C7D007797D1 /* LMNManagePrinterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMNManagePrinterViewController.m; path = "View Controllers/LMNManagePrinterViewController.m"; sourceTree = "<group>"; };
-		4F5FAFF116E21C7D007797D1 /* LMNManagePrinterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LMNManagePrinterViewController.xib; path = "View Controllers/LMNManagePrinterViewController.xib"; sourceTree = "<group>"; };
+		4F5FAFEF16E21C7D007797D1 /* DPZManagePrinterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPZManagePrinterViewController.h; path = "View Controllers/DPZManagePrinterViewController.h"; sourceTree = "<group>"; };
+		4F5FAFF016E21C7D007797D1 /* DPZManagePrinterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPZManagePrinterViewController.m; path = "View Controllers/DPZManagePrinterViewController.m"; sourceTree = "<group>"; };
+		4F5FAFF116E21C7D007797D1 /* DPZManagePrinterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DPZManagePrinterViewController.xib; path = "View Controllers/DPZManagePrinterViewController.xib"; sourceTree = "<group>"; };
 		4F5FAFFC16E22637007797D1 /* print.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = print.html; sourceTree = "<group>"; };
 		4F5FB00316E22B68007797D1 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		4F5FB00416E22B68007797D1 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
@@ -87,22 +87,22 @@
 		4F9E777416E55E0E0036803A /* LittleImagePrinter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LittleImagePrinter.xcdatamodel; sourceTree = "<group>"; };
 		4F9E777916E55E650036803A /* Printer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Printer.h; path = Model/Printer.h; sourceTree = "<group>"; };
 		4F9E777A16E55E650036803A /* Printer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Printer.m; path = Model/Printer.m; sourceTree = "<group>"; };
-		4FA1225416E3C71F00FE27C2 /* LMNEditPrinterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMNEditPrinterViewController.h; path = "View Controllers/LMNEditPrinterViewController.h"; sourceTree = "<group>"; };
-		4FA1225516E3C71F00FE27C2 /* LMNEditPrinterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMNEditPrinterViewController.m; path = "View Controllers/LMNEditPrinterViewController.m"; sourceTree = "<group>"; };
-		4FA1225616E3C71F00FE27C2 /* LMNEditPrinterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LMNEditPrinterViewController.xib; path = "View Controllers/LMNEditPrinterViewController.xib"; sourceTree = "<group>"; };
-		4FA26A1916E56B2C00C08B5A /* FetchedResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FetchedResultsTableViewController.h; path = "View Controllers/FetchedResultsTableViewController.h"; sourceTree = "<group>"; };
-		4FA26A1A16E56B2C00C08B5A /* FetchedResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FetchedResultsTableViewController.m; path = "View Controllers/FetchedResultsTableViewController.m"; sourceTree = "<group>"; };
-		4FA26A1B16E56B2C00C08B5A /* LMNAdjusterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMNAdjusterViewController.h; path = "View Controllers/LMNAdjusterViewController.h"; sourceTree = "<group>"; };
-		4FA26A1C16E56B2C00C08B5A /* LMNAdjusterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMNAdjusterViewController.m; path = "View Controllers/LMNAdjusterViewController.m"; sourceTree = "<group>"; };
-		4FA26A1D16E56B2C00C08B5A /* LMNAdjusterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LMNAdjusterViewController.xib; path = "View Controllers/LMNAdjusterViewController.xib"; sourceTree = "<group>"; };
-		4FA26A1E16E56B2C00C08B5A /* LMNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMNViewController.h; path = "View Controllers/LMNViewController.h"; sourceTree = "<group>"; };
-		4FA26A1F16E56B2C00C08B5A /* LMNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMNViewController.m; path = "View Controllers/LMNViewController.m"; sourceTree = "<group>"; };
-		4FA26A2516E56B5800C08B5A /* LMNImageProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNImageProcessor.h; sourceTree = "<group>"; };
-		4FA26A2616E56B5800C08B5A /* LMNImageProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNImageProcessor.m; sourceTree = "<group>"; };
-		4FA26A2816E56B5800C08B5A /* LMNDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNDataManager.h; sourceTree = "<group>"; };
-		4FA26A2916E56B5800C08B5A /* LMNDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNDataManager.m; sourceTree = "<group>"; };
-		4FA26A2A16E56B5800C08B5A /* LMNPrinterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNPrinterManager.h; sourceTree = "<group>"; };
-		4FA26A2B16E56B5800C08B5A /* LMNPrinterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNPrinterManager.m; sourceTree = "<group>"; };
+		4FA1225416E3C71F00FE27C2 /* DPZEditPrinterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPZEditPrinterViewController.h; path = "View Controllers/DPZEditPrinterViewController.h"; sourceTree = "<group>"; };
+		4FA1225516E3C71F00FE27C2 /* DPZEditPrinterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPZEditPrinterViewController.m; path = "View Controllers/DPZEditPrinterViewController.m"; sourceTree = "<group>"; };
+		4FA1225616E3C71F00FE27C2 /* DPZEditPrinterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DPZEditPrinterViewController.xib; path = "View Controllers/DPZEditPrinterViewController.xib"; sourceTree = "<group>"; };
+		4FA26A1916E56B2C00C08B5A /* DPZFetchedResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPZFetchedResultsTableViewController.h; path = "View Controllers/DPZFetchedResultsTableViewController.h"; sourceTree = "<group>"; };
+		4FA26A1A16E56B2C00C08B5A /* DPZFetchedResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPZFetchedResultsTableViewController.m; path = "View Controllers/DPZFetchedResultsTableViewController.m"; sourceTree = "<group>"; };
+		4FA26A1B16E56B2C00C08B5A /* DPZAdjusterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPZAdjusterViewController.h; path = "View Controllers/DPZAdjusterViewController.h"; sourceTree = "<group>"; };
+		4FA26A1C16E56B2C00C08B5A /* DPZAdjusterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPZAdjusterViewController.m; path = "View Controllers/DPZAdjusterViewController.m"; sourceTree = "<group>"; };
+		4FA26A1D16E56B2C00C08B5A /* DPZAdjusterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DPZAdjusterViewController.xib; path = "View Controllers/DPZAdjusterViewController.xib"; sourceTree = "<group>"; };
+		4FA26A1E16E56B2C00C08B5A /* DPZViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPZViewController.h; path = "View Controllers/DPZViewController.h"; sourceTree = "<group>"; };
+		4FA26A1F16E56B2C00C08B5A /* DPZViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPZViewController.m; path = "View Controllers/DPZViewController.m"; sourceTree = "<group>"; };
+		4FA26A2516E56B5800C08B5A /* DPZImageProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPZImageProcessor.h; sourceTree = "<group>"; };
+		4FA26A2616E56B5800C08B5A /* DPZImageProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPZImageProcessor.m; sourceTree = "<group>"; };
+		4FA26A2816E56B5800C08B5A /* DPZDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPZDataManager.h; sourceTree = "<group>"; };
+		4FA26A2916E56B5800C08B5A /* DPZDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPZDataManager.m; sourceTree = "<group>"; };
+		4FA26A2A16E56B5800C08B5A /* DPZPrinterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPZPrinterManager.h; sourceTree = "<group>"; };
+		4FA26A2B16E56B5800C08B5A /* DPZPrinterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPZPrinterManager.m; sourceTree = "<group>"; };
 		4FDC158D16E252470047D0A1 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Little Image Printer/Icon-72.png"; sourceTree = "<group>"; };
 		4FDC158E16E252470047D0A1 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "Little Image Printer/Icon-72@2x.png"; sourceTree = "<group>"; };
 		4FDC158F16E252470047D0A1 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Little Image Printer/Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -181,16 +181,16 @@
 		4F5FAFBF16E217C5007797D1 /* Little Image Printer */ = {
 			isa = PBXGroup;
 			children = (
+				4F5FAFC816E217C5007797D1 /* DPZAppDelegate.h */,
+				4F5FAFC916E217C5007797D1 /* DPZAppDelegate.m */,
+				4F5FAFD416E217C5007797D1 /* DPZViewController_iPhone.xib */,
+				4F5FAFD716E217C5007797D1 /* DPZViewController_iPad.xib */,
+				4F5FAFF416E21C84007797D1 /* View Controllers */,
 				4FA26A2416E56B5800C08B5A /* Image Processing */,
 				4FA26A2716E56B5800C08B5A /* Managers */,
 				4F5FAFFB16E22637007797D1 /* Resources */,
 				4F5FAFE016E2180F007797D1 /* Model */,
-				4F5FAFC816E217C5007797D1 /* LMNAppDelegate.h */,
-				4F5FAFC916E217C5007797D1 /* LMNAppDelegate.m */,
-				4F5FAFD416E217C5007797D1 /* LMNViewController_iPhone.xib */,
-				4F5FAFD716E217C5007797D1 /* LMNViewController_iPad.xib */,
 				4F5FAFC016E217C5007797D1 /* Supporting Files */,
-				4F5FAFF416E21C84007797D1 /* View Controllers */,
 			);
 			path = "Little Image Printer";
 			sourceTree = "<group>";
@@ -222,19 +222,19 @@
 		4F5FAFF416E21C84007797D1 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4FA26A1916E56B2C00C08B5A /* FetchedResultsTableViewController.h */,
-				4FA26A1A16E56B2C00C08B5A /* FetchedResultsTableViewController.m */,
-				4FA26A1B16E56B2C00C08B5A /* LMNAdjusterViewController.h */,
-				4FA26A1C16E56B2C00C08B5A /* LMNAdjusterViewController.m */,
-				4FA26A1D16E56B2C00C08B5A /* LMNAdjusterViewController.xib */,
-				4FA26A1E16E56B2C00C08B5A /* LMNViewController.h */,
-				4FA26A1F16E56B2C00C08B5A /* LMNViewController.m */,
-				4F5FAFEF16E21C7D007797D1 /* LMNManagePrinterViewController.h */,
-				4F5FAFF016E21C7D007797D1 /* LMNManagePrinterViewController.m */,
-				4F5FAFF116E21C7D007797D1 /* LMNManagePrinterViewController.xib */,
-				4FA1225416E3C71F00FE27C2 /* LMNEditPrinterViewController.h */,
-				4FA1225516E3C71F00FE27C2 /* LMNEditPrinterViewController.m */,
-				4FA1225616E3C71F00FE27C2 /* LMNEditPrinterViewController.xib */,
+				4FA26A1916E56B2C00C08B5A /* DPZFetchedResultsTableViewController.h */,
+				4FA26A1A16E56B2C00C08B5A /* DPZFetchedResultsTableViewController.m */,
+				4FA26A1B16E56B2C00C08B5A /* DPZAdjusterViewController.h */,
+				4FA26A1C16E56B2C00C08B5A /* DPZAdjusterViewController.m */,
+				4FA26A1D16E56B2C00C08B5A /* DPZAdjusterViewController.xib */,
+				4FA26A1E16E56B2C00C08B5A /* DPZViewController.h */,
+				4FA26A1F16E56B2C00C08B5A /* DPZViewController.m */,
+				4F5FAFEF16E21C7D007797D1 /* DPZManagePrinterViewController.h */,
+				4F5FAFF016E21C7D007797D1 /* DPZManagePrinterViewController.m */,
+				4F5FAFF116E21C7D007797D1 /* DPZManagePrinterViewController.xib */,
+				4FA1225416E3C71F00FE27C2 /* DPZEditPrinterViewController.h */,
+				4FA1225516E3C71F00FE27C2 /* DPZEditPrinterViewController.m */,
+				4FA1225616E3C71F00FE27C2 /* DPZEditPrinterViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -279,8 +279,8 @@
 		4FA26A2416E56B5800C08B5A /* Image Processing */ = {
 			isa = PBXGroup;
 			children = (
-				4FA26A2516E56B5800C08B5A /* LMNImageProcessor.h */,
-				4FA26A2616E56B5800C08B5A /* LMNImageProcessor.m */,
+				4FA26A2516E56B5800C08B5A /* DPZImageProcessor.h */,
+				4FA26A2616E56B5800C08B5A /* DPZImageProcessor.m */,
 			);
 			path = "Image Processing";
 			sourceTree = "<group>";
@@ -288,10 +288,10 @@
 		4FA26A2716E56B5800C08B5A /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				4FA26A2816E56B5800C08B5A /* LMNDataManager.h */,
-				4FA26A2916E56B5800C08B5A /* LMNDataManager.m */,
-				4FA26A2A16E56B5800C08B5A /* LMNPrinterManager.h */,
-				4FA26A2B16E56B5800C08B5A /* LMNPrinterManager.m */,
+				4FA26A2816E56B5800C08B5A /* DPZDataManager.h */,
+				4FA26A2916E56B5800C08B5A /* DPZDataManager.m */,
+				4FA26A2A16E56B5800C08B5A /* DPZPrinterManager.h */,
+				4FA26A2B16E56B5800C08B5A /* DPZPrinterManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -323,9 +323,9 @@
 		4F5FAFAE16E217C5007797D1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = LMN;
+				CLASSPREFIX = DPZ;
 				LastUpgradeCheck = 0460;
-				ORGANIZATIONNAME = "Lumen Services Limited";
+				ORGANIZATIONNAME = "David Wilkinson";
 			};
 			buildConfigurationList = 4F5FAFB116E217C5007797D1 /* Build configuration list for PBXProject "Little Image Printer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -353,10 +353,10 @@
 				4F5FAFCC16E217C5007797D1 /* Default.png in Resources */,
 				4F5FAFCE16E217C5007797D1 /* Default@2x.png in Resources */,
 				4F5FAFD016E217C5007797D1 /* Default-568h@2x.png in Resources */,
-				4F5FAFD616E217C5007797D1 /* LMNViewController_iPhone.xib in Resources */,
-				4F5FAFD916E217C5007797D1 /* LMNViewController_iPad.xib in Resources */,
+				4F5FAFD616E217C5007797D1 /* DPZViewController_iPhone.xib in Resources */,
+				4F5FAFD916E217C5007797D1 /* DPZViewController_iPad.xib in Resources */,
 				4F5FAFE816E21A31007797D1 /* increment-build.sh in Resources */,
-				4F5FAFF316E21C7D007797D1 /* LMNManagePrinterViewController.xib in Resources */,
+				4F5FAFF316E21C7D007797D1 /* DPZManagePrinterViewController.xib in Resources */,
 				4F5FAFFD16E22637007797D1 /* print.html in Resources */,
 				4FDC159716E252470047D0A1 /* Icon-72.png in Resources */,
 				4FDC159816E252470047D0A1 /* Icon-72@2x.png in Resources */,
@@ -370,8 +370,8 @@
 				4FDC15A016E252470047D0A1 /* iTunesArtwork@2x in Resources */,
 				4FEC7AC916E256B80005B013 /* 61-brightness@2x.png in Resources */,
 				4FEC7ACA16E256B80005B013 /* 62-contrast@2x.png in Resources */,
-				4FA1225816E3C71F00FE27C2 /* LMNEditPrinterViewController.xib in Resources */,
-				4FA26A2216E56B2C00C08B5A /* LMNAdjusterViewController.xib in Resources */,
+				4FA1225816E3C71F00FE27C2 /* DPZEditPrinterViewController.xib in Resources */,
+				4FA26A2216E56B2C00C08B5A /* DPZAdjusterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,20 +399,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F5FAFC616E217C5007797D1 /* main.m in Sources */,
-				4F5FAFCA16E217C5007797D1 /* LMNAppDelegate.m in Sources */,
-				4F5FAFF216E21C7D007797D1 /* LMNManagePrinterViewController.m in Sources */,
+				4F5FAFCA16E217C5007797D1 /* DPZAppDelegate.m in Sources */,
+				4F5FAFF216E21C7D007797D1 /* DPZManagePrinterViewController.m in Sources */,
 				4F5FB00A16E22B68007797D1 /* NSData+Base64.m in Sources */,
 				4F5FB00B16E22B68007797D1 /* NSString+Base64.m in Sources */,
 				4F5FB00C16E22B68007797D1 /* NSString+URLEncode.m in Sources */,
-				4FA1225716E3C71F00FE27C2 /* LMNEditPrinterViewController.m in Sources */,
+				4FA1225716E3C71F00FE27C2 /* DPZEditPrinterViewController.m in Sources */,
 				4F9E777716E55E0E0036803A /* LittleImagePrinter.xcdatamodeld in Sources */,
 				4F9E777B16E55E650036803A /* Printer.m in Sources */,
-				4FA26A2016E56B2C00C08B5A /* FetchedResultsTableViewController.m in Sources */,
-				4FA26A2116E56B2C00C08B5A /* LMNAdjusterViewController.m in Sources */,
-				4FA26A2316E56B2C00C08B5A /* LMNViewController.m in Sources */,
-				4FA26A2C16E56B5800C08B5A /* LMNImageProcessor.m in Sources */,
-				4FA26A2D16E56B5800C08B5A /* LMNDataManager.m in Sources */,
-				4FA26A2E16E56B5800C08B5A /* LMNPrinterManager.m in Sources */,
+				4FA26A2016E56B2C00C08B5A /* DPZFetchedResultsTableViewController.m in Sources */,
+				4FA26A2116E56B2C00C08B5A /* DPZAdjusterViewController.m in Sources */,
+				4FA26A2316E56B2C00C08B5A /* DPZViewController.m in Sources */,
+				4FA26A2C16E56B5800C08B5A /* DPZImageProcessor.m in Sources */,
+				4FA26A2D16E56B5800C08B5A /* DPZDataManager.m in Sources */,
+				4FA26A2E16E56B5800C08B5A /* DPZPrinterManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,20 +427,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		4F5FAFD416E217C5007797D1 /* LMNViewController_iPhone.xib */ = {
+		4F5FAFD416E217C5007797D1 /* DPZViewController_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4F5FAFD516E217C5007797D1 /* en */,
 			);
-			name = LMNViewController_iPhone.xib;
+			name = DPZViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
-		4F5FAFD716E217C5007797D1 /* LMNViewController_iPad.xib */ = {
+		4F5FAFD716E217C5007797D1 /* DPZViewController_iPad.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4F5FAFD816E217C5007797D1 /* en */,
 			);
-			name = LMNViewController_iPad.xib;
+			name = DPZViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

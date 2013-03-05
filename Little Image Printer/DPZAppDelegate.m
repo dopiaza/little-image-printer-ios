@@ -1,16 +1,16 @@
 //
-//  LMNAppDelegate.m
+//  DPZAppDelegate.m
 //  Little Image Printer
 //
 //  Created by David Wilkinson on 02/03/2013.
-//  Copyright (c) 2013 Lumen Services Limited. All rights reserved.
+//  Copyright (c) 2013 David Wilkinson. All rights reserved.
 //
 
-#import "LMNAppDelegate.h"
+#import "DPZAppDelegate.h"
 
-#import "LMNViewController.h"
+#import "DPZViewController.h"
 
-@implementation LMNAppDelegate
+@implementation DPZAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -18,13 +18,13 @@
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
     {
-        LMNViewController *vc = [[LMNViewController alloc] initWithNibName:@"LMNViewController_iPhone" bundle:nil];
+        DPZViewController *vc = [[DPZViewController alloc] initWithNibName:@"DPZViewController_iPhone" bundle:nil];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
         self.viewController = navController;
     }
     else
     {
-        self.viewController = [[LMNViewController alloc] initWithNibName:@"LMNViewController_iPad" bundle:nil];
+        self.viewController = [[DPZViewController alloc] initWithNibName:@"DPZViewController_iPad" bundle:nil];
     }
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];

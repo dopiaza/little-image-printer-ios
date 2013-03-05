@@ -1,26 +1,26 @@
 //
-//  LMNDataManager.m
+//  DPZDataManager.m
 //  Little Image Printer
 //
 //  Created by David Wilkinson on 02/03/2013.
-//  Copyright (c) 2013 Lumen Services Limited. All rights reserved.
+//  Copyright (c) 2013 David Wilkinson. All rights reserved.
 //
 
-#import "LMNDataManager.h"
+#import "DPZDataManager.h"
 
-static LMNDataManager *_sharedManager = nil;
+static DPZDataManager *_sharedManager = nil;
 
-@implementation LMNDataManager
+@implementation DPZDataManager
 
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
 
-+ (LMNDataManager *)sharedManager
++ (DPZDataManager *)sharedManager
 {
     if (_sharedManager == nil)
     {
-        _sharedManager = [[LMNDataManager alloc] init];
+        _sharedManager = [[DPZDataManager alloc] init];
     }
     return _sharedManager;
 }

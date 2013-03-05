@@ -1,16 +1,16 @@
 //
-//  LMNAppDelegate.h
+//  DPZAppDelegate.h
 //  Little Image Printer
 //
 //  Created by David Wilkinson on 02/03/2013.
-//  Copyright (c) 2013 Lumen Services Limited. All rights reserved.
+//  Copyright (c) 2013 David Wilkinson. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@class LMNViewController;
+@class DPZViewController;
 
-@interface LMNAppDelegate : UIResponder <UIApplicationDelegate>
+@interface DPZAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

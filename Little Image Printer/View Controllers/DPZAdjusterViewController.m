@@ -1,22 +1,22 @@
 //
-//  LMNAdjusterViewController.m
+//  DPZAdjusterViewController.m
 //  Little Image Printer
 //
 //  Created by David Wilkinson on 02/03/2013.
-//  Copyright (c) 2013 Lumen Services Limited. All rights reserved.
+//  Copyright (c) 2013 David Wilkinson. All rights reserved.
 //
 
-#import "LMNAdjusterViewController.h"
-#import "LMNImageProcessor.h"
-#import "LMNPrinterManager.h"
+#import "DPZAdjusterViewController.h"
+#import "DPZImageProcessor.h"
+#import "DPZPrinterManager.h"
 
-@interface LMNAdjusterViewController ()
+@interface DPZAdjusterViewController ()
 
-@property (nonatomic, strong) LMNImageProcessor *imageProcessor;
+@property (nonatomic, strong) DPZImageProcessor *imageProcessor;
 
 @end
 
-@implementation LMNAdjusterViewController
+@implementation DPZAdjusterViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,7 +31,7 @@
 {
     [super viewDidLoad];
 
-    self.imageProcessor = [[LMNImageProcessor alloc] initWithSourceImage:self.sourceImage];
+    self.imageProcessor = [[DPZImageProcessor alloc] initWithSourceImage:self.sourceImage];
     self.image.image = [self.imageProcessor processImage];
     [self.image setNeedsDisplay];
 }
@@ -53,7 +53,7 @@
 
 - (IBAction)print
 {
-    [[LMNPrinterManager sharedPrinterManager] printImage:[self.imageProcessor processImage]];
+    [[DPZPrinterManager sharedPrinterManager] printImage:[self.imageProcessor processImage]];
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
