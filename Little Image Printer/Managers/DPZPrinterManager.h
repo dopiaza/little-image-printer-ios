@@ -13,7 +13,8 @@
 
 + (DPZPrinterManager *)sharedPrinterManager;
 
-- (Printer *) createPrinter;
+- (Printer *)createPrinter;
+- (void)deletePrinter:(Printer *)printer;
 
 
 - (void)printImageForURL:(NSURL *)imageURL;

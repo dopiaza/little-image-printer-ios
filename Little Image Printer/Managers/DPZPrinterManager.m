@@ -85,6 +85,18 @@ static DPZPrinterManager *_sharedPrinterManager;
     return [dm insertNewObjectForEntityForName:@"Printer"];
 }
 
+- (void)deletePrinter:(Printer *)printer
+{
+    DPZDataManager *dm = [DPZDataManager sharedManager];
+    if ([printer.active boolValue])
+    {
+        // This is the active printer,
+        [DPZPrinterManager sharedPrinterManager].activePrinter = nil;
+    }
+    [dm deleteObject:printer];
+    [dm saveContext];
+}
+
 - (NSArray *)printers
 {
     DPZDataManager *dm = [DPZDataManager sharedManager];

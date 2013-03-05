@@ -16,5 +16,7 @@
 - (IBAction)chooseFromLibrary:(id)sender;
 
 @property (nonatomic, strong) IBOutlet UILabel *printerNameLabel;
+@property (nonatomic, strong) IBOutlet UIButton *takePhotoButton;
+@property (nonatomic, strong) IBOutlet UIButton *chooseFromLibraryButton;
 
 @end

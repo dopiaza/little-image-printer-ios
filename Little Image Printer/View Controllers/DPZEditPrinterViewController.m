@@ -30,20 +30,43 @@
 {
     [super viewDidLoad];
     
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)];
+    self.saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)];
 
-    self.navigationItem.rightBarButtonItem = saveButton;
+    self.navigationItem.rightBarButtonItem = self.saveButton;
     if (self.printer)
     {
         self.name.text = self.printer.name;
         self.code.text = self.printer.code;
     }
+    [self refreshControls];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)refreshControls
+{
+    if (self.printer == nil)
+    {
+        self.deleteButton.enabled = NO;
+    }
+    
+    if ([self.name.text length] == 0 || [self.code.text length] == 0)
+    {
+        self.saveButton.enabled = NO;
+    }
+    else
+    {
+        self.saveButton.enabled = YES;
+    }
+}
+
+- (void)textChanged:(id)sender
+{
+    [self refreshControls];
 }
 
 - (void)save
@@ -56,6 +79,13 @@
     self.printer.name = self.name.text;
     self.printer.code = self.code.text;
     [dm saveContext];
+    
+    DPZPrinterManager *pm = [DPZPrinterManager sharedPrinterManager];
+    if ([pm.printers count] == 1)
+    {
+        // We only have one printer, let's auto select it
+        pm.activePrinter = self.printer;
+    }
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -81,9 +111,7 @@
         case 1:
         {
             // Delete
-            DPZDataManager *dm = [DPZDataManager sharedManager];
-            [dm deleteObject:self.printer];
-            [dm saveContext];
+            [[DPZPrinterManager sharedPrinterManager] deletePrinter:self.printer];
             [self.navigationController popViewControllerAnimated:YES];
             break;
         }

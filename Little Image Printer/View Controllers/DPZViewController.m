@@ -26,6 +26,8 @@
 {
     [super viewDidLoad];
 
+    self.title = @"Little Image Printer";
+    
     [self refresh];
 }
 
@@ -44,7 +46,10 @@
 - (void)refresh
 {
     Printer *printer = [DPZPrinterManager sharedPrinterManager].activePrinter;
-    self.printerNameLabel.text = printer ? printer.name : @"";
+    BOOL printerChosen = (printer != nil);
+    self.printerNameLabel.text = printerChosen ? printer.name : @"";
+    self.takePhotoButton.enabled = printerChosen;
+    self.chooseFromLibraryButton.enabled = printerChosen;
 }
 
 - (IBAction)managePrinters:(id)sender

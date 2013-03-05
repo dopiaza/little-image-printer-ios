@@ -39,6 +39,7 @@
 		4FA26A2C16E56B5800C08B5A /* DPZImageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA26A2616E56B5800C08B5A /* DPZImageProcessor.m */; };
 		4FA26A2D16E56B5800C08B5A /* DPZDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA26A2916E56B5800C08B5A /* DPZDataManager.m */; };
 		4FA26A2E16E56B5800C08B5A /* DPZPrinterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA26A2B16E56B5800C08B5A /* DPZPrinterManager.m */; };
+		4FA26A3016E5733700C08B5A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4FA26A2F16E5733700C08B5A /* README.md */; };
 		4FDC159716E252470047D0A1 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FDC158D16E252470047D0A1 /* Icon-72.png */; };
 		4FDC159816E252470047D0A1 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FDC158E16E252470047D0A1 /* Icon-72@2x.png */; };
 		4FDC159916E252470047D0A1 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FDC158F16E252470047D0A1 /* Icon-Small-50.png */; };
@@ -103,6 +104,7 @@
 		4FA26A2916E56B5800C08B5A /* DPZDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPZDataManager.m; sourceTree = "<group>"; };
 		4FA26A2A16E56B5800C08B5A /* DPZPrinterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPZPrinterManager.h; sourceTree = "<group>"; };
 		4FA26A2B16E56B5800C08B5A /* DPZPrinterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPZPrinterManager.m; sourceTree = "<group>"; };
+		4FA26A2F16E5733700C08B5A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		4FDC158D16E252470047D0A1 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Little Image Printer/Icon-72.png"; sourceTree = "<group>"; };
 		4FDC158E16E252470047D0A1 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "Little Image Printer/Icon-72@2x.png"; sourceTree = "<group>"; };
 		4FDC158F16E252470047D0A1 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Little Image Printer/Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		4F5FAFAD16E217C5007797D1 = {
 			isa = PBXGroup;
 			children = (
+				4FA26A2F16E5733700C08B5A /* README.md */,
 				4FEC7AC716E256B80005B013 /* 61-brightness@2x.png */,
 				4FEC7AC816E256B80005B013 /* 62-contrast@2x.png */,
 				4FDC158D16E252470047D0A1 /* Icon-72.png */,
@@ -183,8 +186,6 @@
 			children = (
 				4F5FAFC816E217C5007797D1 /* DPZAppDelegate.h */,
 				4F5FAFC916E217C5007797D1 /* DPZAppDelegate.m */,
-				4F5FAFD416E217C5007797D1 /* DPZViewController_iPhone.xib */,
-				4F5FAFD716E217C5007797D1 /* DPZViewController_iPad.xib */,
 				4F5FAFF416E21C84007797D1 /* View Controllers */,
 				4FA26A2416E56B5800C08B5A /* Image Processing */,
 				4FA26A2716E56B5800C08B5A /* Managers */,
@@ -222,13 +223,15 @@
 		4F5FAFF416E21C84007797D1 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4FA26A1E16E56B2C00C08B5A /* DPZViewController.h */,
+				4FA26A1F16E56B2C00C08B5A /* DPZViewController.m */,
+				4F5FAFD416E217C5007797D1 /* DPZViewController_iPhone.xib */,
+				4F5FAFD716E217C5007797D1 /* DPZViewController_iPad.xib */,
 				4FA26A1916E56B2C00C08B5A /* DPZFetchedResultsTableViewController.h */,
 				4FA26A1A16E56B2C00C08B5A /* DPZFetchedResultsTableViewController.m */,
 				4FA26A1B16E56B2C00C08B5A /* DPZAdjusterViewController.h */,
 				4FA26A1C16E56B2C00C08B5A /* DPZAdjusterViewController.m */,
 				4FA26A1D16E56B2C00C08B5A /* DPZAdjusterViewController.xib */,
-				4FA26A1E16E56B2C00C08B5A /* DPZViewController.h */,
-				4FA26A1F16E56B2C00C08B5A /* DPZViewController.m */,
 				4F5FAFEF16E21C7D007797D1 /* DPZManagePrinterViewController.h */,
 				4F5FAFF016E21C7D007797D1 /* DPZManagePrinterViewController.m */,
 				4F5FAFF116E21C7D007797D1 /* DPZManagePrinterViewController.xib */,
@@ -372,6 +375,7 @@
 				4FEC7ACA16E256B80005B013 /* 62-contrast@2x.png in Resources */,
 				4FA1225816E3C71F00FE27C2 /* DPZEditPrinterViewController.xib in Resources */,
 				4FA26A2216E56B2C00C08B5A /* DPZAdjusterViewController.xib in Resources */,
+				4FA26A3016E5733700C08B5A /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

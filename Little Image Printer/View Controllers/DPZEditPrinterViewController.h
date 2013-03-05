@@ -11,10 +11,14 @@
 
 @interface DPZEditPrinterViewController : UIViewController
 
+- (IBAction)textChanged:(id)sender;
 - (IBAction)deletePrinter:(id)sender;
 
 @property (nonatomic, strong) IBOutlet UITextField *name;
 @property (nonatomic, strong) IBOutlet UITextField *code;
+
+@property (nonatomic, strong) IBOutlet UIButton *deleteButton;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *saveButton;
 
 @property (nonatomic, strong) Printer *printer;
 
