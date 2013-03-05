@@ -1,18 +1,18 @@
 //
-//  LMNImageProcessor.m
+//  DPZImageProcessor.m
 //  Little Image Printer
 //
 //  Created by David Wilkinson on 02/03/2013.
-//  Copyright (c) 2013 Lumen Services Limited. All rights reserved.
+//  Copyright (c) 2013 David Wilkinson. All rights reserved.
 //
 
 #import <QuartzCore/QuartzCore.h>
-#import "LMNImageProcessor.h"
+#import "DPZImageProcessor.h"
 
 #define LPWIDTH 384.0
 
 
-@interface LMNImageProcessor ()
+@interface DPZImageProcessor ()
 
 @property (strong) NSURL *imageURL;
 
@@ -27,7 +27,7 @@
 
 @end
 
-@implementation LMNImageProcessor
+@implementation DPZImageProcessor
 
 - (id)initWithSourceImageURL:(NSURL *)sourceImageURL
 {
