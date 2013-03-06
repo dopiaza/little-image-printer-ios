@@ -28,6 +28,10 @@
 		4F5FB00C16E22B68007797D1 /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5FB00916E22B68007797D1 /* NSString+URLEncode.m */; };
 		4F5FB00E16E22EC9007797D1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FB00D16E22EC8007797D1 /* QuartzCore.framework */; };
 		4F5FB01016E22EF0007797D1 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FB00F16E22EF0007797D1 /* CoreImage.framework */; };
+		4F788B9F16E760520062BB89 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F788B9E16E760520062BB89 /* CoreMedia.framework */; };
+		4F788BA116E760590062BB89 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F788BA016E760590062BB89 /* CoreVideo.framework */; };
+		4F788BA316E760640062BB89 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F788BA216E760640062BB89 /* OpenGLES.framework */; };
+		4F788BA516E7606A0062BB89 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F788BA416E7606A0062BB89 /* AVFoundation.framework */; };
 		4F9E777716E55E0E0036803A /* LittleImagePrinter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E777216E55E0E0036803A /* LittleImagePrinter.xcdatamodeld */; };
 		4F9E777B16E55E650036803A /* Printer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E777A16E55E650036803A /* Printer.m */; };
 		4FA1225716E3C71F00FE27C2 /* DPZEditPrinterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA1225516E3C71F00FE27C2 /* DPZEditPrinterViewController.m */; };
@@ -44,6 +48,7 @@
 		4FA26A3716E5806700C08B5A /* Brightness@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA26A3316E5806700C08B5A /* Brightness@2x.png */; };
 		4FA26A3816E5806700C08B5A /* Contrast.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA26A3416E5806700C08B5A /* Contrast.png */; };
 		4FA26A3916E5806700C08B5A /* Contrast@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA26A3516E5806700C08B5A /* Contrast@2x.png */; };
+		4FD56A5316E6804D00E96D23 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD56A5216E6804D00E96D23 /* libGPUImage.a */; };
 		4FDC159716E252470047D0A1 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FDC158D16E252470047D0A1 /* Icon-72.png */; };
 		4FDC159816E252470047D0A1 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FDC158E16E252470047D0A1 /* Icon-72@2x.png */; };
 		4FDC159916E252470047D0A1 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FDC158F16E252470047D0A1 /* Icon-Small-50.png */; };
@@ -86,6 +91,10 @@
 		4F5FB00916E22B68007797D1 /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncode.m"; sourceTree = "<group>"; };
 		4F5FB00D16E22EC8007797D1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4F5FB00F16E22EF0007797D1 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		4F788B9E16E760520062BB89 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		4F788BA016E760590062BB89 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		4F788BA216E760640062BB89 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		4F788BA416E7606A0062BB89 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		4F9E777316E55E0E0036803A /* LittleImagePrinter 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "LittleImagePrinter 2.xcdatamodel"; sourceTree = "<group>"; };
 		4F9E777416E55E0E0036803A /* LittleImagePrinter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LittleImagePrinter.xcdatamodel; sourceTree = "<group>"; };
 		4F9E777916E55E650036803A /* Printer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Printer.h; path = Model/Printer.h; sourceTree = "<group>"; };
@@ -111,6 +120,7 @@
 		4FA26A3316E5806700C08B5A /* Brightness@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Brightness@2x.png"; sourceTree = "<group>"; };
 		4FA26A3416E5806700C08B5A /* Contrast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Contrast.png; sourceTree = "<group>"; };
 		4FA26A3516E5806700C08B5A /* Contrast@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Contrast@2x.png"; sourceTree = "<group>"; };
+		4FD56A5216E6804D00E96D23 /* libGPUImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGPUImage.a; path = "../../../Library/Developer/Xcode/DerivedData/Little_Image_Printer-fgjeusrighnqjqcgmxujwpuszggp/Build/Products/Debug-iphoneos/libGPUImage.a"; sourceTree = "<group>"; };
 		4FDC158D16E252470047D0A1 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Little Image Printer/Icon-72.png"; sourceTree = "<group>"; };
 		4FDC158E16E252470047D0A1 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "Little Image Printer/Icon-72@2x.png"; sourceTree = "<group>"; };
 		4FDC158F16E252470047D0A1 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Little Image Printer/Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -128,6 +138,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FD56A5316E6804D00E96D23 /* libGPUImage.a in Frameworks */,
+				4F788BA516E7606A0062BB89 /* AVFoundation.framework in Frameworks */,
+				4F788BA316E760640062BB89 /* OpenGLES.framework in Frameworks */,
+				4F788BA116E760590062BB89 /* CoreVideo.framework in Frameworks */,
+				4F788B9F16E760520062BB89 /* CoreMedia.framework in Frameworks */,
 				4F5FB01016E22EF0007797D1 /* CoreImage.framework in Frameworks */,
 				4F5FB00E16E22EC9007797D1 /* QuartzCore.framework in Frameworks */,
 				4F5FAFEB16E21B5B007797D1 /* CoreData.framework in Frameworks */,
@@ -176,6 +191,11 @@
 		4F5FAFAD16E217C5007797D1 = {
 			isa = PBXGroup;
 			children = (
+				4F788BA416E7606A0062BB89 /* AVFoundation.framework */,
+				4F788BA216E760640062BB89 /* OpenGLES.framework */,
+				4F788BA016E760590062BB89 /* CoreVideo.framework */,
+				4F788B9E16E760520062BB89 /* CoreMedia.framework */,
+				4FD56A5216E6804D00E96D23 /* libGPUImage.a */,
 				4F1CBA4A16E603500023C118 /* Scripts */,
 				4F1CBA4816E603130023C118 /* Docs */,
 				4F1CBA4916E603210023C118 /* Icons */,
@@ -519,6 +539,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../GPUImage/framework/\"/**";
 			};
 			name = Debug;
 		};
@@ -544,6 +565,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../GPUImage/framework/\"/**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -554,6 +576,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Little Image Printer/Little Image Printer-Prefix.pch";
 				INFOPLIST_FILE = "Little Image Printer/Little Image Printer-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -566,6 +589,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Little Image Printer/Little Image Printer-Prefix.pch";
 				INFOPLIST_FILE = "Little Image Printer/Little Image Printer-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
