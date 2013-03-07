@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GPUImage.h"
 
 @interface DPZAdjusterViewController : UIViewController
 
@@ -18,7 +19,7 @@
 
 @property (nonatomic, strong) IBOutlet UISlider *brightness;
 @property (nonatomic, strong) IBOutlet UISlider *contrast;
-@property (nonatomic, strong) IBOutlet UIImageView *image;
+@property (nonatomic, strong) IBOutlet UIView *imageViewHolder;
 
 
 @end
