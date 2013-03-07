@@ -51,18 +51,18 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<string key="IBUIText">Default Printer</string>
-						<object class="NSColor" key="IBUITextColor" id="484072009">
+						<object class="NSColor" key="IBUITextColor" id="228568929">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MCAwIDAAA</bytes>
 							<string key="IBUIColorCocoaTouchKeyPath">darkTextColor</string>
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="57426006">
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="1014854375">
 							<int key="type">1</int>
 							<double key="pointSize">12</double>
 						</object>
-						<object class="NSFont" key="IBUIFont" id="585429161">
+						<object class="NSFont" key="IBUIFont" id="620842436">
 							<string key="NSName">Helvetica</string>
 							<double key="NSSize">12</double>
 							<int key="NSfFlags">16</int>
@@ -172,7 +172,7 @@
 						<string key="NSFrameSize">{320, 317}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="181056727"/>
+						<reference key="NSNextKeyView" ref="959772691"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -181,7 +181,7 @@
 							<string key="NSResourceName">Little Printer.png</string>
 						</object>
 					</object>
-					<object class="IBUILabel" id="181056727">
+					<object class="IBUILabel" id="959772691">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{15, 463}, {61, 21}}</string>
@@ -195,11 +195,11 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<string key="IBUIText">Printing to</string>
-						<reference key="IBUITextColor" ref="484072009"/>
+						<reference key="IBUITextColor" ref="228568929"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
-						<reference key="IBUIFontDescription" ref="57426006"/>
-						<reference key="IBUIFont" ref="585429161"/>
+						<reference key="IBUIFontDescription" ref="1014854375"/>
+						<reference key="IBUIFont" ref="620842436"/>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
 				</array>
@@ -320,7 +320,7 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="566897744"/>
 							<reference ref="941823820"/>
-							<reference ref="181056727"/>
+							<reference ref="959772691"/>
 							<reference ref="986517766"/>
 							<reference ref="310991480"/>
 							<reference ref="409029967"/>
@@ -354,7 +354,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">32</int>
-						<reference key="object" ref="181056727"/>
+						<reference key="object" ref="959772691"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 				</array>
@@ -438,7 +438,7 @@
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="Camera-down.png">{215, 227}</string>
 			<string key="Camera-up.png">{215, 227}</string>
-			<string key="Little Printer.png">{556, 556}</string>
+			<string key="Little Printer.png">{559, 606}</string>
 			<string key="Photos-down.png">{215, 227}</string>
 			<string key="Photos-up.png">{215, 227}</string>
 			<string key="Printers-down.png">{215, 227}</string>
