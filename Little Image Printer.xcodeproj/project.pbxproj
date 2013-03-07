@@ -23,6 +23,10 @@
 		4F06496416E90449007DE41B /* Printers-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F06495816E90449007DE41B /* Printers-down@2x.png */; };
 		4F06496516E90449007DE41B /* Printers-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F06495916E90449007DE41B /* Printers-up.png */; };
 		4F06496616E90449007DE41B /* Printers-up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F06495A16E90449007DE41B /* Printers-up@2x.png */; };
+		4F06496B16E91611007DE41B /* Delete-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F06496716E91611007DE41B /* Delete-down.png */; };
+		4F06496C16E91611007DE41B /* Delete-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F06496816E91611007DE41B /* Delete-down@2x.png */; };
+		4F06496D16E91611007DE41B /* Delete-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F06496916E91611007DE41B /* Delete-up.png */; };
+		4F06496E16E91611007DE41B /* Delete-up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F06496A16E91611007DE41B /* Delete-up@2x.png */; };
 		4F1CBA4C16E603500023C118 /* increment-build.sh in Resources */ = {isa = PBXBuildFile; fileRef = 4F1CBA4B16E603500023C118 /* increment-build.sh */; };
 		4F5FAFBA16E217C5007797D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FAFB916E217C5007797D1 /* UIKit.framework */; };
 		4F5FAFBC16E217C5007797D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FAFBB16E217C5007797D1 /* Foundation.framework */; };
@@ -96,6 +100,10 @@
 		4F06495816E90449007DE41B /* Printers-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Printers-down@2x.png"; sourceTree = "<group>"; };
 		4F06495916E90449007DE41B /* Printers-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Printers-up.png"; sourceTree = "<group>"; };
 		4F06495A16E90449007DE41B /* Printers-up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Printers-up@2x.png"; sourceTree = "<group>"; };
+		4F06496716E91611007DE41B /* Delete-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Delete-down.png"; sourceTree = "<group>"; };
+		4F06496816E91611007DE41B /* Delete-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Delete-down@2x.png"; sourceTree = "<group>"; };
+		4F06496916E91611007DE41B /* Delete-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Delete-up.png"; sourceTree = "<group>"; };
+		4F06496A16E91611007DE41B /* Delete-up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Delete-up@2x.png"; sourceTree = "<group>"; };
 		4F1CBA4B16E603500023C118 /* increment-build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "increment-build.sh"; sourceTree = "<group>"; };
 		4F5FAFB616E217C5007797D1 /* Little Image Printer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Image Printer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5FAFB916E217C5007797D1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -385,6 +393,10 @@
 		4FA26A3116E5806700C08B5A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4F06496716E91611007DE41B /* Delete-down.png */,
+				4F06496816E91611007DE41B /* Delete-down@2x.png */,
+				4F06496916E91611007DE41B /* Delete-up.png */,
+				4F06496A16E91611007DE41B /* Delete-up@2x.png */,
 				4F06494F16E90449007DE41B /* Camera-down.png */,
 				4F06495016E90449007DE41B /* Camera-down@2x.png */,
 				4F06495116E90449007DE41B /* Camera-up.png */,
@@ -508,6 +520,10 @@
 				4F06496416E90449007DE41B /* Printers-down@2x.png in Resources */,
 				4F06496516E90449007DE41B /* Printers-up.png in Resources */,
 				4F06496616E90449007DE41B /* Printers-up@2x.png in Resources */,
+				4F06496B16E91611007DE41B /* Delete-down.png in Resources */,
+				4F06496C16E91611007DE41B /* Delete-down@2x.png in Resources */,
+				4F06496D16E91611007DE41B /* Delete-up.png in Resources */,
+				4F06496E16E91611007DE41B /* Delete-up@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
