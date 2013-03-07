@@ -47,9 +47,9 @@
 {
     Printer *printer = [DPZPrinterManager sharedPrinterManager].activePrinter;
     BOOL printerChosen = (printer != nil);
-    self.printerNameLabel.text = printerChosen ? printer.name : @"";
-    self.takePhotoButton.enabled = printerChosen;
-    self.chooseFromLibraryButton.enabled = printerChosen;
+    self.printerNameLabel.text = printerChosen ? [NSString stringWithFormat:@"Printing to %@", printer.name] : @"Please tap on the button above to select a printer";
+    self.takePhotoButton.hidden = !printerChosen;
+    self.chooseFromLibraryButton.hidden = !printerChosen;
 }
 
 - (IBAction)managePrinters:(id)sender
