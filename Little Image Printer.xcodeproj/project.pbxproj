@@ -28,6 +28,8 @@
 		4F5FB00C16E22B68007797D1 /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5FB00916E22B68007797D1 /* NSString+URLEncode.m */; };
 		4F5FB00E16E22EC9007797D1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FB00D16E22EC8007797D1 /* QuartzCore.framework */; };
 		4F5FB01016E22EF0007797D1 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FB00F16E22EF0007797D1 /* CoreImage.framework */; };
+		4F62159316E8DA1A005A0C12 /* Little Printer.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F62159116E8DA1A005A0C12 /* Little Printer.png */; };
+		4F62159416E8DA1A005A0C12 /* Little Printer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F62159216E8DA1A005A0C12 /* Little Printer@2x.png */; };
 		4F788B9F16E760520062BB89 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F788B9E16E760520062BB89 /* CoreMedia.framework */; };
 		4F788BA116E760590062BB89 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F788BA016E760590062BB89 /* CoreVideo.framework */; };
 		4F788BA316E760640062BB89 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F788BA216E760640062BB89 /* OpenGLES.framework */; };
@@ -91,6 +93,8 @@
 		4F5FB00916E22B68007797D1 /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncode.m"; sourceTree = "<group>"; };
 		4F5FB00D16E22EC8007797D1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4F5FB00F16E22EF0007797D1 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		4F62159116E8DA1A005A0C12 /* Little Printer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Little Printer.png"; sourceTree = "<group>"; };
+		4F62159216E8DA1A005A0C12 /* Little Printer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Little Printer@2x.png"; sourceTree = "<group>"; };
 		4F788B9E16E760520062BB89 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		4F788BA016E760590062BB89 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		4F788BA216E760640062BB89 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -349,6 +353,8 @@
 		4FA26A3116E5806700C08B5A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4F62159116E8DA1A005A0C12 /* Little Printer.png */,
+				4F62159216E8DA1A005A0C12 /* Little Printer@2x.png */,
 				4FA26A3216E5806700C08B5A /* Brightness.png */,
 				4FA26A3316E5806700C08B5A /* Brightness@2x.png */,
 				4FA26A3416E5806700C08B5A /* Contrast.png */,
@@ -436,6 +442,8 @@
 				4FA26A3816E5806700C08B5A /* Contrast.png in Resources */,
 				4FA26A3916E5806700C08B5A /* Contrast@2x.png in Resources */,
 				4F1CBA4C16E603500023C118 /* increment-build.sh in Resources */,
+				4F62159316E8DA1A005A0C12 /* Little Printer.png in Resources */,
+				4F62159416E8DA1A005A0C12 /* Little Printer@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
