@@ -6,6 +6,10 @@ Twitter: @dopiaza
 
 Copyright (c) 2013 David Wilkinson
 
+## v0.3: 7th March 2013
+
+- Move to [GPUImage](https://github.com/BradLarson/GPUImage) for image adjustments
+
 ## v0.2: 5th March 2013
 
 General overhaul and tidy up of the code.
