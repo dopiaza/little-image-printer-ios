@@ -96,7 +96,7 @@
 
 - (IBAction)print
 {
-    [[DPZPrinterManager sharedPrinterManager] printImage:[self.imageProcessor processImage]];
+    [[DPZPrinterManager sharedPrinterManager] printImage:[self.grayscaleFilter imageFromCurrentlyProcessedOutput]];
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
