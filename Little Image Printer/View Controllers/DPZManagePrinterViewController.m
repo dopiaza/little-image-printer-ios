@@ -31,6 +31,8 @@
 {
     [super viewDidLoad];
 
+    self.title = @"Printers";
+
     self.fetchedResultsController = [DPZPrinterManager sharedPrinterManager].printersFetchedResultsController;
     
     self.addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd

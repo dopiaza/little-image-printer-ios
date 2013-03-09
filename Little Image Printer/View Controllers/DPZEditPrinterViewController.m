@@ -9,6 +9,7 @@
 #import "DPZEditPrinterViewController.h"
 #import "DPZDataManager.h"
 #import "DPZPrinterManager.h"
+#import "UIView+FirstResponder.h"
 
 @interface DPZEditPrinterViewController ()
 
@@ -33,12 +34,46 @@
     self.saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)];
 
     self.navigationItem.rightBarButtonItem = self.saveButton;
+    
     if (self.printer)
     {
         self.name.text = self.printer.name;
         self.code.text = self.printer.code;
+        self.title = @"Edit Printer";
     }
+    else
+    {
+        self.title = @"Add Printer";
+    }
+    
     [self refreshControls];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    // unregister for keyboard notifications while not visible.
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillShowNotification
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillHideNotification
+                                                  object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -116,6 +151,51 @@
             break;
         }
     }
+}
+
+
+
+// Called when the UIKeyboardWillShowNotification is sent.
+- (void)keyboardWillShow:(NSNotification*)notification
+{
+    NSDictionary* info = [notification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+    CGRect f = self.containerView.frame;
+    f.origin.y = f.origin.y - kbSize.height;
+    NSTimeInterval duration = [self keyboardAnimationDurationForNotification:notification];
+    [UIView animateWithDuration:duration animations:^{
+        self.containerView.frame = f;
+    }];
+}
+
+
+// Called when the UIKeyboardWillHideNotification is sent
+- (void)keyboardWillHide:(NSNotification*)notification
+{
+    NSDictionary* info = [notification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    CGRect f = self.containerView.frame;
+    f.origin.y = f.origin.y + kbSize.height;
+    NSTimeInterval duration = [self keyboardAnimationDurationForNotification:notification];
+    [UIView animateWithDuration:duration animations:^{
+        self.containerView.frame = f;
+    }];
+}
+
+- (NSTimeInterval)keyboardAnimationDurationForNotification:(NSNotification*)notification
+{
+    NSDictionary* info = [notification userInfo];
+    NSValue* value = [info objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSTimeInterval duration = 0;
+    [value getValue:&duration];
+    return duration;
+}
+
+// Hide the keyboard when the user taps outside of the controls
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view findAndResignFirstResponder];
 }
 
 @end

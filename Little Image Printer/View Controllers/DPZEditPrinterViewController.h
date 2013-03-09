@@ -20,6 +20,8 @@
 @property (nonatomic, strong) IBOutlet UIButton *deleteButton;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *saveButton;
 
+@property (nonatomic, strong) IBOutlet UIView *containerView;
+
 @property (nonatomic, strong) Printer *printer;
 
 @end

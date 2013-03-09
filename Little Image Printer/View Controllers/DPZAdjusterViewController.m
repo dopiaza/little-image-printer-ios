@@ -40,6 +40,8 @@
 {
     [super viewDidLoad];
 
+    self.title = @"Adjust Image";
+    
     //self.imageProcessor = [[DPZImageProcessor alloc] initWithSourceImage:self.sourceImage];
     //self.image.image = [self.imageProcessor processImage];
     //[self.image setNeedsDisplay];
@@ -60,6 +62,7 @@
     
     self.imageView = [[GPUImageView alloc] initWithFrame:frame];
     self.imageView.fillMode = kGPUImageFillModePreserveAspectRatio;
+    [self.imageView setBackgroundColorRed:0.0 green:0.0 blue:0.0 alpha:1.0];
     [self.imageViewHolder addSubview:self.imageView];
     
     self.sourcePicture = [[GPUImagePicture alloc] initWithImage:adjustedImage smoothlyScaleOutput:YES];
