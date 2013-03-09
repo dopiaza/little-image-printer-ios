@@ -30,6 +30,13 @@
 		4F06497516E9F9A5007DE41B /* UIView+Explorer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F06497416E9F9A5007DE41B /* UIView+Explorer.m */; };
 		4F06497816E9FD81007DE41B /* UIView+FirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F06497716E9FD81007DE41B /* UIView+FirstResponder.m */; };
 		4F1CBA4C16E603500023C118 /* increment-build.sh in Resources */ = {isa = PBXBuildFile; fileRef = 4F1CBA4B16E603500023C118 /* increment-build.sh */; };
+		4F2E95D716EB8B79004CA9B3 /* HISTORY.md in Resources */ = {isa = PBXBuildFile; fileRef = 4F2E95D516EB8B79004CA9B3 /* HISTORY.md */; };
+		4F2E95D816EB8B79004CA9B3 /* LICENCE.md in Resources */ = {isa = PBXBuildFile; fileRef = 4F2E95D616EB8B79004CA9B3 /* LICENCE.md */; };
+		4F2E95DA16EB8BA7004CA9B3 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 4F2E95D916EB8BA7004CA9B3 /* about.html */; };
+		4F2E95DD16EB929D004CA9B3 /* Info.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F2E95DB16EB929D004CA9B3 /* Info.png */; };
+		4F2E95DE16EB929D004CA9B3 /* Info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F2E95DC16EB929D004CA9B3 /* Info@2x.png */; };
+		4F2E95E216EB9319004CA9B3 /* DPZAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2E95E016EB9319004CA9B3 /* DPZAboutViewController.m */; };
+		4F2E95E316EB9319004CA9B3 /* DPZAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F2E95E116EB9319004CA9B3 /* DPZAboutViewController.xib */; };
 		4F5FAFBA16E217C5007797D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FAFB916E217C5007797D1 /* UIKit.framework */; };
 		4F5FAFBC16E217C5007797D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FAFBB16E217C5007797D1 /* Foundation.framework */; };
 		4F5FAFBE16E217C5007797D1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FAFBD16E217C5007797D1 /* CoreGraphics.framework */; };
@@ -111,6 +118,14 @@
 		4F06497616E9FD81007DE41B /* UIView+FirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FirstResponder.h"; sourceTree = "<group>"; };
 		4F06497716E9FD81007DE41B /* UIView+FirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FirstResponder.m"; sourceTree = "<group>"; };
 		4F1CBA4B16E603500023C118 /* increment-build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "increment-build.sh"; sourceTree = "<group>"; };
+		4F2E95D516EB8B79004CA9B3 /* HISTORY.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HISTORY.md; sourceTree = "<group>"; };
+		4F2E95D616EB8B79004CA9B3 /* LICENCE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE.md; sourceTree = "<group>"; };
+		4F2E95D916EB8BA7004CA9B3 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
+		4F2E95DB16EB929D004CA9B3 /* Info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Info.png; sourceTree = "<group>"; };
+		4F2E95DC16EB929D004CA9B3 /* Info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Info@2x.png"; sourceTree = "<group>"; };
+		4F2E95DF16EB9319004CA9B3 /* DPZAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPZAboutViewController.h; path = "View Controllers/DPZAboutViewController.h"; sourceTree = "<group>"; };
+		4F2E95E016EB9319004CA9B3 /* DPZAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPZAboutViewController.m; path = "View Controllers/DPZAboutViewController.m"; sourceTree = "<group>"; };
+		4F2E95E116EB9319004CA9B3 /* DPZAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DPZAboutViewController.xib; path = "View Controllers/DPZAboutViewController.xib"; sourceTree = "<group>"; };
 		4F5FAFB616E217C5007797D1 /* Little Image Printer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Image Printer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5FAFB916E217C5007797D1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4F5FAFBB16E217C5007797D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -219,6 +234,8 @@
 		4F1CBA4816E603130023C118 /* Docs */ = {
 			isa = PBXGroup;
 			children = (
+				4F2E95D516EB8B79004CA9B3 /* HISTORY.md */,
+				4F2E95D616EB8B79004CA9B3 /* LICENCE.md */,
 				4FA26A2F16E5733700C08B5A /* README.md */,
 			);
 			name = Docs;
@@ -346,6 +363,9 @@
 				4FA1225416E3C71F00FE27C2 /* DPZEditPrinterViewController.h */,
 				4FA1225516E3C71F00FE27C2 /* DPZEditPrinterViewController.m */,
 				4FA1225616E3C71F00FE27C2 /* DPZEditPrinterViewController.xib */,
+				4F2E95DF16EB9319004CA9B3 /* DPZAboutViewController.h */,
+				4F2E95E016EB9319004CA9B3 /* DPZAboutViewController.m */,
+				4F2E95E116EB9319004CA9B3 /* DPZAboutViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -354,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				4F5FAFFC16E22637007797D1 /* print.html */,
+				4F2E95D916EB8BA7004CA9B3 /* about.html */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -411,6 +432,8 @@
 		4FA26A3116E5806700C08B5A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4F2E95DB16EB929D004CA9B3 /* Info.png */,
+				4F2E95DC16EB929D004CA9B3 /* Info@2x.png */,
 				4F06496716E91611007DE41B /* Delete-down.png */,
 				4F06496816E91611007DE41B /* Delete-down@2x.png */,
 				4F06496916E91611007DE41B /* Delete-up.png */,
@@ -542,6 +565,12 @@
 				4F06496C16E91611007DE41B /* Delete-down@2x.png in Resources */,
 				4F06496D16E91611007DE41B /* Delete-up.png in Resources */,
 				4F06496E16E91611007DE41B /* Delete-up@2x.png in Resources */,
+				4F2E95D716EB8B79004CA9B3 /* HISTORY.md in Resources */,
+				4F2E95D816EB8B79004CA9B3 /* LICENCE.md in Resources */,
+				4F2E95DA16EB8BA7004CA9B3 /* about.html in Resources */,
+				4F2E95DD16EB929D004CA9B3 /* Info.png in Resources */,
+				4F2E95DE16EB929D004CA9B3 /* Info@2x.png in Resources */,
+				4F2E95E316EB9319004CA9B3 /* DPZAboutViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +614,7 @@
 				4FA26A2E16E56B5800C08B5A /* DPZPrinterManager.m in Sources */,
 				4F06497516E9F9A5007DE41B /* UIView+Explorer.m in Sources */,
 				4F06497816E9FD81007DE41B /* UIView+FirstResponder.m in Sources */,
+				4F2E95E216EB9319004CA9B3 /* DPZAboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

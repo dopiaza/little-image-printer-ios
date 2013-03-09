@@ -11,6 +11,7 @@
 #import "DPZPrinterManager.h"
 #import "DPZAdjusterViewController.h"
 #import "DPZManagePrinterViewController.h"
+#import "DPZAboutViewController.h"
 #import "Printer.h"
 
 @interface DPZViewController ()
@@ -31,6 +32,21 @@
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target: nil action: nil];
     
     [[self navigationItem] setBackBarButtonItem:backButton];
+    
+    // Set up about button
+    UIImage *infoImage = [UIImage imageNamed:@"Info"];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setImage:infoImage forState:UIControlStateNormal];
+    button.frame = CGRectMake(0.0, 0.0, 24.0, 24.0);
+    [button addTarget:self
+               action:@selector(about)
+     forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *infoButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+
+    
+
+    [self.navigationItem setRightBarButtonItem:infoButton];
     
     [self refresh];
 }
@@ -54,6 +70,13 @@
     self.printerNameLabel.text = printerChosen ? [NSString stringWithFormat:@"Printing to %@", printer.name] : @"Please tap on the button above to select a printer";
     self.takePhotoButton.hidden = !printerChosen;
     self.chooseFromLibraryButton.hidden = !printerChosen;
+}
+
+- (void)about
+{
+    DPZAboutViewController *vc = [[DPZAboutViewController alloc] initWithNibName:@"DPZAboutViewController" bundle:nil];
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)managePrinters:(id)sender

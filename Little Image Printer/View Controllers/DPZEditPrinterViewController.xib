@@ -194,7 +194,6 @@
 										<string key="NSFrame">{{219, 96}, {81, 44}}</string>
 										<reference key="NSSuperview" ref="549253778"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIOpaque">NO</bool>
 										<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
