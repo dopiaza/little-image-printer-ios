@@ -23,6 +23,8 @@
 
 @property (nonatomic, strong) GPUImagePicture *sourcePicture;
 
+@property (nonatomic, strong) UIImage *adjustedImage; // The image after rotation and scaling for LP
+
 @end
 
 @implementation DPZAdjusterViewController
@@ -30,7 +32,8 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self)
+    {
         // Custom initialization
     }
     return self;
@@ -42,30 +45,21 @@
 
     self.title = @"Adjust Image";
     
-    //self.imageProcessor = [[DPZImageProcessor alloc] initWithSourceImage:self.sourceImage];
-    //self.image.image = [self.imageProcessor processImage];
-    //[self.image setNeedsDisplay];
-    
     UIBarButtonItem *printButton = [[UIBarButtonItem alloc] initWithTitle:@"Print" style:UIBarButtonItemStyleBordered target:self action:@selector(print)];
     self.navigationItem.rightBarButtonItem = printButton;
     
-    self.brightnessFilter = [[GPUImageBrightnessFilter alloc] init];
-    self.contrastFilter = [[GPUImageContrastFilter alloc] init];
-    self.grayscaleFilter = [[GPUImageGrayscaleFilter alloc] init];
+    self.adjustedImage = [self rotateAndScaleImage:self.sourceImage];
     
-    UIImage *adjustedImage = [self rotateAndScaleImage:self.sourceImage];
-    CGSize imageSize = adjustedImage.size;
-    CGRect frame = CGRectMake((self.imageViewHolder.frame.size.width - imageSize.width)/2,
-                              (self.imageViewHolder.frame.size.height - imageSize.height)/2,
-                              imageSize.width,
-                              imageSize.height);
-    
-    self.imageView = [[GPUImageView alloc] initWithFrame:frame];
+    self.imageView = [[GPUImageView alloc] initWithFrame:[self frameForImageView]];
     self.imageView.fillMode = kGPUImageFillModePreserveAspectRatio;
     [self.imageView setBackgroundColorRed:0.0 green:0.0 blue:0.0 alpha:1.0];
     [self.imageViewHolder addSubview:self.imageView];
     
-    self.sourcePicture = [[GPUImagePicture alloc] initWithImage:adjustedImage smoothlyScaleOutput:YES];
+    self.brightnessFilter = [[GPUImageBrightnessFilter alloc] init];
+    self.contrastFilter = [[GPUImageContrastFilter alloc] init];
+    self.grayscaleFilter = [[GPUImageGrayscaleFilter alloc] init];
+
+    self.sourcePicture = [[GPUImagePicture alloc] initWithImage:self.adjustedImage smoothlyScaleOutput:YES];
     [self.brightnessFilter forceProcessingAtSize:self.imageView.sizeInPixels]; // This is now needed to make the filter run at the smaller output size
     [self.contrastFilter forceProcessingAtSize:self.imageView.sizeInPixels];
     [self.grayscaleFilter forceProcessingAtSize:self.imageView.sizeInPixels];
@@ -76,7 +70,33 @@
     [self.grayscaleFilter addTarget:self.imageView];
     
     [self.sourcePicture processImage];
+}
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    // We need to adjust the frame for the image view - the correct size for the imageViewHolder isn't
+    // set until viewWillAppear
+    self.imageView.frame = [self frameForImageView];
+}
+
+- (CGRect)frameForImageView
+{
+    CGRect imageViewHolderFrame = self.imageViewHolder.frame;
+    
+    CGSize imageSize = self.adjustedImage.size;
+    
+    // Scale to fit on screen
+    CGFloat scale = MIN(imageViewHolderFrame.size.width/imageSize.width, imageViewHolderFrame.size.height/imageSize.height);
+    
+    CGFloat w = imageSize.width * scale;
+    CGFloat h = imageSize.height * scale;
+    CGFloat x = MAX((imageViewHolderFrame.size.width - w)/2, 0.0);
+    CGFloat y = MAX((imageViewHolderFrame.size.height - h)/2, 0.0);
+    CGRect imageViewFrame = CGRectMake(x, y, w, h);
+    
+    return imageViewFrame;
 }
 
 - (void)didReceiveMemoryWarning
@@ -88,10 +108,6 @@
 
 - (IBAction)adjusted
 {
-    //self.imageProcessor.brightness = self.brightness.value;
-    //self.imageProcessor.contrast = self.contrast.value;
-    //self.image.image = [self.imageProcessor processImage];
-    //[self.image setNeedsDisplay];
     [self.brightnessFilter setBrightness:self.brightness.value];
     [self.contrastFilter setContrast:self.contrast.value];
     [self.sourcePicture processImage];
@@ -108,6 +124,7 @@
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];    
 }
 
+// Rotate image to correct orientation and scale to fit on Little Printer
 - (UIImage *)rotateAndScaleImage:(UIImage *)image
 {
     CGFloat angle = 0.0;
@@ -136,7 +153,7 @@
     }
 
     CGSize originalSize = [self.sourceImage size];
-    CGFloat scale = MIN(LPWIDTH/originalSize.width, self.imageViewHolder.frame.size.height/originalSize.height);
+    CGFloat scale = MIN(LPWIDTH/originalSize.width, 1.0); // Don't scale small images up
     
     CIImage *img = [[CIImage alloc] initWithCGImage:[image CGImage]];;
     CGAffineTransform t = CGAffineTransformMakeScale(scale, scale);
