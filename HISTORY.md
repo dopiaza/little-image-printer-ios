@@ -6,6 +6,16 @@ Twitter: @dopiaza
 
 Copyright (c) 2013 David Wilkinson
 
+## v0.4: 9th March 2013
+
+- Overhaul app look and feel
+- Add About screen
+- Add info about where to find Direct Print Codes
+- Add launch images
+- Support 3.5" screen
+- Set iOS 5.1 as deployment target
+- Accessibility
+
 ## v0.3: 7th March 2013
 
 - Move to [GPUImage](https://github.com/BradLarson/GPUImage) for image adjustments

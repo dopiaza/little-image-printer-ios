@@ -11,6 +11,7 @@
 #import "DPZPrinterManager.h"
 #import "DPZAdjusterViewController.h"
 #import "DPZManagePrinterViewController.h"
+#import "DPZAboutViewController.h"
 #import "Printer.h"
 
 @interface DPZViewController ()
@@ -27,6 +28,27 @@
     [super viewDidLoad];
 
     self.title = @"Little Image Printer";
+
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target: nil action: nil];
+    
+    [[self navigationItem] setBackBarButtonItem:backButton];
+    
+    // Set up about button
+    UIImage *infoImage = [UIImage imageNamed:@"Info"];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setImage:infoImage forState:UIControlStateNormal];
+    button.frame = CGRectMake(0.0, 0.0, 24.0, 24.0);
+    [button addTarget:self
+               action:@selector(about)
+     forControlEvents:UIControlEventTouchUpInside];
+
+    button.accessibilityLabel = @"About";
+    button.accessibilityHint = @"Shows information about this app";
+    button.accessibilityTraits = UIAccessibilityTraitButton;
+    
+    UIBarButtonItem *infoButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+
+    [self.navigationItem setRightBarButtonItem:infoButton];
     
     [self refresh];
 }
@@ -43,13 +65,28 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
 - (void)refresh
 {
+    BOOL hasCamera = [UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera];
+
     Printer *printer = [DPZPrinterManager sharedPrinterManager].activePrinter;
     BOOL printerChosen = (printer != nil);
-    self.printerNameLabel.text = printerChosen ? printer.name : @"";
-    self.takePhotoButton.enabled = printerChosen;
-    self.chooseFromLibraryButton.enabled = printerChosen;
+    
+    self.printerNameLabel.text = printerChosen ? [NSString stringWithFormat:@"Printing to %@", printer.name] : @"Please tap on the button above to select a printer";
+    self.takePhotoButton.hidden = !(printerChosen && hasCamera);
+    self.chooseFromLibraryButton.hidden = !printerChosen;
+}
+
+- (void)about
+{
+    DPZAboutViewController *vc = [[DPZAboutViewController alloc] initWithNibName:@"DPZAboutViewController" bundle:nil];
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)managePrinters:(id)sender
@@ -106,6 +143,7 @@
 {
     DPZAdjusterViewController *vc = [[DPZAdjusterViewController alloc] initWithNibName:@"DPZAdjusterViewController" bundle:nil];
     vc.sourceImage = image;
+    
     [self.navigationController pushViewController:vc animated:YES];
 }
 

@@ -31,6 +31,8 @@
 {
     [super viewDidLoad];
 
+    self.title = @"Printers";
+
     self.fetchedResultsController = [DPZPrinterManager sharedPrinterManager].printersFetchedResultsController;
     
     self.addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
@@ -43,6 +45,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (void)addPrinter:(id)sender

@@ -20,6 +20,7 @@
     {
         DPZViewController *vc = [[DPZViewController alloc] initWithNibName:@"DPZViewController_iPhone" bundle:nil];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
+        navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
         self.viewController = navController;
     }
     else

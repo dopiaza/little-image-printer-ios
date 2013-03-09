@@ -20,6 +20,7 @@
 @property (nonatomic, strong) IBOutlet UISlider *brightness;
 @property (nonatomic, strong) IBOutlet UISlider *contrast;
 @property (nonatomic, strong) IBOutlet UIView *imageViewHolder;
+@property (nonatomic, strong) IBOutlet UIView *adjustmentsViewHolder;
 
 
 @end
