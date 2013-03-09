@@ -11,8 +11,6 @@
 @interface DPZAboutViewController : UIViewController
 <UIWebViewDelegate>
 
-- (IBAction)close:(id)sender;
-
 @property (nonatomic, strong) IBOutlet UIWebView *webView;
 
 @end
