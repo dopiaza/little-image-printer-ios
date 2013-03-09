@@ -34,11 +34,18 @@
     self.saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)];
 
     self.navigationItem.rightBarButtonItem = self.saveButton;
+    
     if (self.printer)
     {
         self.name.text = self.printer.name;
         self.code.text = self.printer.code;
+        self.title = @"Edit Printer";
     }
+    else
+    {
+        self.title = @"Add Printer";
+    }
+    
     [self refreshControls];
 }
 

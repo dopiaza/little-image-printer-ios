@@ -27,6 +27,10 @@
     [super viewDidLoad];
 
     self.title = @"Little Image Printer";
+
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target: nil action: nil];
+    
+    [[self navigationItem] setBackBarButtonItem:backButton];
     
     [self refresh];
 }
@@ -106,6 +110,7 @@
 {
     DPZAdjusterViewController *vc = [[DPZAdjusterViewController alloc] initWithNibName:@"DPZAdjusterViewController" bundle:nil];
     vc.sourceImage = image;
+    
     [self.navigationController pushViewController:vc animated:YES];
 }
 
