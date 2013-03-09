@@ -20,6 +20,9 @@ static DPZPrinterManager *_sharedPrinterManager;
 @property (nonatomic, strong) DPZImageProcessor *imageProcessor;
 @property (nonatomic, strong) NSURLConnection *connection;
 
+@property (nonatomic, copy) void (^completionBlock)(BOOL);
+@property (nonatomic, assign) NSInteger httpStatus;
+
 @end
 
 @implementation DPZPrinterManager
@@ -127,62 +130,113 @@ static DPZPrinterManager *_sharedPrinterManager;
     return _printersFetchedResultsController;
 }
 
-- (void)printImageForURL:(NSURL *)imageURL
+- (void)printImageForURL:(NSURL *)imageURL withCompletionBlock:(DPZPrinterManagerCallback)completionBlock
 {
     if (imageURL)
     {
         self.imageProcessor = [[DPZImageProcessor alloc] initWithSourceImageURL:imageURL];
-        [self doPrint];
+        [self doPrintWithCompletionBlock:completionBlock];
     }
 }
 
-- (void)printImage:(UIImage *)image
+- (void)printImage:(UIImage *)image withCompletionBlock:(DPZPrinterManagerCallback)completionBlock
 {
     if (image)
     {
         self.imageProcessor = [[DPZImageProcessor alloc] initWithSourceImage:image];        
-        [self doPrint];
+        [self doPrintWithCompletionBlock:completionBlock];
     }
 }
 
-- (void)doPrint
+- (void)doPrintWithCompletionBlock:(DPZPrinterManagerCallback)completionBlock
 {
-    NSError *error;
+    _error = nil;
+    NSError *error = nil;
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"print" ofType:@"html"];
     NSMutableString *html = [NSMutableString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
     
-    NSString *contentType = @"image/png";
-    NSData *imageData = nil; // [self.imageProcessor generatePNG];
-    if ([imageData length] == 0)
+    if (error)
     {
-        imageData = [self.imageProcessor generateJPG];
-        contentType = @"image/jpg";
+        _error = error;
+        if (completionBlock)
+        {
+            completionBlock(NO);
+        }
+    }
+    else
+    {
+        self.completionBlock = completionBlock;
+        
+        NSString *contentType = @"image/png";
+        NSData *imageData = nil;
+        if ([imageData length] == 0)
+        {
+            imageData = [self.imageProcessor generateJPG];
+            contentType = @"image/jpg";
+        }
+        
+        NSString *dataUri = [NSString stringWithFormat:@"data:%@;base64,%@", contentType, [imageData base64EncodedString]];
+        NSString *ditherClass = @"dither";
+        
+        NSString *finalHTML = [[html stringByReplacingOccurrencesOfString:@"_IMAGECLASS_" withString:ditherClass]
+                               stringByReplacingOccurrencesOfString:@"_IMAGEURL_" withString:dataUri];
+        NSString *urlEncodedHtml = [finalHTML urlEncode];
+        
+        NSString *body = [NSString stringWithFormat:@"html=%@", urlEncodedHtml];
+        NSString *urlString = [NSString stringWithFormat:@"http://remote.bergcloud.com/playground/direct_print/%@",
+                               self.activePrinter.code];
+        NSURL *url = [NSURL URLWithString:urlString];
+        NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+        [urlRequest setHTTPMethod:@"POST"];
+        [urlRequest setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        self.connection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:NO];
+        [self.connection start];
+    }
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+    self.httpStatus = [httpResponse statusCode];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    if (self.httpStatus == 200)
+    {
+        _error = nil;
+    }
+    else
+    {
+        NSString *message = nil;
+        if (self.httpStatus == 401)
+        {
+            message = @"You are trying to print to a printer that doesn't exist. Please check you are using the correct print code.";
+        }
+        else
+        {
+            message = @"There was a problem trying to print to that printer.";
+        }
+        NSMutableDictionary* userInfo = [NSMutableDictionary dictionary];
+        [userInfo setValue:message forKey:NSLocalizedDescriptionKey];
+        _error = [NSError errorWithDomain:@"org.dopiaza.littleimageprinterios" code:1 userInfo:userInfo];        
     }
     
-    NSString *dataUri = [NSString stringWithFormat:@"data:%@;base64,%@", contentType, [imageData base64EncodedString]];
-    NSString *ditherClass = @"dither";
-    
-    NSString *finalHTML = [[html stringByReplacingOccurrencesOfString:@"_IMAGECLASS_" withString:ditherClass]
-                           stringByReplacingOccurrencesOfString:@"_IMAGEURL_" withString:dataUri];
-    NSString *urlEncodedHtml = [finalHTML urlEncode];
-    
-    NSString *body = [NSString stringWithFormat:@"html=%@", urlEncodedHtml];
-    NSString *urlString = [NSString stringWithFormat:@"http://remote.bergcloud.com/playground/direct_print/%@",
-                           self.activePrinter.code];
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
-    [urlRequest setHTTPMethod:@"POST"];
-    [urlRequest setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    self.connection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:NO];
-    [self.connection start];
-    
+    if (self.completionBlock)
+    {
+        self.completionBlock(self.error == nil);
+    }
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    NSLog(@"Failed: %@", [error localizedDescription]);
+    _error = error;
+    if (self.completionBlock)
+    {
+        self.completionBlock(NO);
+    }
 }
 
 @end
