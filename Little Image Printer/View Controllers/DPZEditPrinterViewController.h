@@ -13,6 +13,7 @@
 
 - (IBAction)textChanged:(id)sender;
 - (IBAction)deletePrinter:(id)sender;
+- (IBAction)findPrinterCode:(id)sender;
 
 @property (nonatomic, strong) IBOutlet UITextField *name;
 @property (nonatomic, strong) IBOutlet UITextField *code;

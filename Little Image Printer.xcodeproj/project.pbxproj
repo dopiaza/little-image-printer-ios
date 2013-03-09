@@ -37,6 +37,11 @@
 		4F2E95DE16EB929D004CA9B3 /* Info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F2E95DC16EB929D004CA9B3 /* Info@2x.png */; };
 		4F2E95E216EB9319004CA9B3 /* DPZAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2E95E016EB9319004CA9B3 /* DPZAboutViewController.m */; };
 		4F2E95E316EB9319004CA9B3 /* DPZAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F2E95E116EB9319004CA9B3 /* DPZAboutViewController.xib */; };
+		4F2E95E716EB9CF0004CA9B3 /* DPZPrintCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2E95E516EB9CF0004CA9B3 /* DPZPrintCodeViewController.m */; };
+		4F2E95E816EB9CF0004CA9B3 /* DPZPrintCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F2E95E616EB9CF0004CA9B3 /* DPZPrintCodeViewController.xib */; };
+		4F2E95EA16EB9D99004CA9B3 /* print-code.html in Resources */ = {isa = PBXBuildFile; fileRef = 4F2E95E916EB9D99004CA9B3 /* print-code.html */; };
+		4F2E95ED16EBA019004CA9B3 /* Printer-code.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F2E95EB16EBA019004CA9B3 /* Printer-code.png */; };
+		4F2E95EE16EBA019004CA9B3 /* Printer-code@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F2E95EC16EBA019004CA9B3 /* Printer-code@2x.png */; };
 		4F5FAFBA16E217C5007797D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FAFB916E217C5007797D1 /* UIKit.framework */; };
 		4F5FAFBC16E217C5007797D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FAFBB16E217C5007797D1 /* Foundation.framework */; };
 		4F5FAFBE16E217C5007797D1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5FAFBD16E217C5007797D1 /* CoreGraphics.framework */; };
@@ -126,6 +131,12 @@
 		4F2E95DF16EB9319004CA9B3 /* DPZAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPZAboutViewController.h; path = "View Controllers/DPZAboutViewController.h"; sourceTree = "<group>"; };
 		4F2E95E016EB9319004CA9B3 /* DPZAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPZAboutViewController.m; path = "View Controllers/DPZAboutViewController.m"; sourceTree = "<group>"; };
 		4F2E95E116EB9319004CA9B3 /* DPZAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DPZAboutViewController.xib; path = "View Controllers/DPZAboutViewController.xib"; sourceTree = "<group>"; };
+		4F2E95E416EB9CF0004CA9B3 /* DPZPrintCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPZPrintCodeViewController.h; path = "View Controllers/DPZPrintCodeViewController.h"; sourceTree = "<group>"; };
+		4F2E95E516EB9CF0004CA9B3 /* DPZPrintCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPZPrintCodeViewController.m; path = "View Controllers/DPZPrintCodeViewController.m"; sourceTree = "<group>"; };
+		4F2E95E616EB9CF0004CA9B3 /* DPZPrintCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DPZPrintCodeViewController.xib; path = "View Controllers/DPZPrintCodeViewController.xib"; sourceTree = "<group>"; };
+		4F2E95E916EB9D99004CA9B3 /* print-code.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "print-code.html"; sourceTree = "<group>"; };
+		4F2E95EB16EBA019004CA9B3 /* Printer-code.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Printer-code.png"; sourceTree = "<group>"; };
+		4F2E95EC16EBA019004CA9B3 /* Printer-code@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Printer-code@2x.png"; sourceTree = "<group>"; };
 		4F5FAFB616E217C5007797D1 /* Little Image Printer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Image Printer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5FAFB916E217C5007797D1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4F5FAFBB16E217C5007797D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -366,6 +377,9 @@
 				4F2E95DF16EB9319004CA9B3 /* DPZAboutViewController.h */,
 				4F2E95E016EB9319004CA9B3 /* DPZAboutViewController.m */,
 				4F2E95E116EB9319004CA9B3 /* DPZAboutViewController.xib */,
+				4F2E95E416EB9CF0004CA9B3 /* DPZPrintCodeViewController.h */,
+				4F2E95E516EB9CF0004CA9B3 /* DPZPrintCodeViewController.m */,
+				4F2E95E616EB9CF0004CA9B3 /* DPZPrintCodeViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -375,6 +389,7 @@
 			children = (
 				4F5FAFFC16E22637007797D1 /* print.html */,
 				4F2E95D916EB8BA7004CA9B3 /* about.html */,
+				4F2E95E916EB9D99004CA9B3 /* print-code.html */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -432,6 +447,8 @@
 		4FA26A3116E5806700C08B5A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4F2E95EB16EBA019004CA9B3 /* Printer-code.png */,
+				4F2E95EC16EBA019004CA9B3 /* Printer-code@2x.png */,
 				4F2E95DB16EB929D004CA9B3 /* Info.png */,
 				4F2E95DC16EB929D004CA9B3 /* Info@2x.png */,
 				4F06496716E91611007DE41B /* Delete-down.png */,
@@ -571,6 +588,10 @@
 				4F2E95DD16EB929D004CA9B3 /* Info.png in Resources */,
 				4F2E95DE16EB929D004CA9B3 /* Info@2x.png in Resources */,
 				4F2E95E316EB9319004CA9B3 /* DPZAboutViewController.xib in Resources */,
+				4F2E95E816EB9CF0004CA9B3 /* DPZPrintCodeViewController.xib in Resources */,
+				4F2E95EA16EB9D99004CA9B3 /* print-code.html in Resources */,
+				4F2E95ED16EBA019004CA9B3 /* Printer-code.png in Resources */,
+				4F2E95EE16EBA019004CA9B3 /* Printer-code@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +636,7 @@
 				4F06497516E9F9A5007DE41B /* UIView+Explorer.m in Sources */,
 				4F06497816E9FD81007DE41B /* UIView+FirstResponder.m in Sources */,
 				4F2E95E216EB9319004CA9B3 /* DPZAboutViewController.m in Sources */,
+				4F2E95E716EB9CF0004CA9B3 /* DPZPrintCodeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
