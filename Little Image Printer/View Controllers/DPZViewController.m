@@ -41,10 +41,12 @@
     [button addTarget:self
                action:@selector(about)
      forControlEvents:UIControlEventTouchUpInside];
+
+    button.accessibilityLabel = @"About";
+    button.accessibilityHint = @"Shows information about this app";
+    button.accessibilityTraits = UIAccessibilityTraitButton;
     
     UIBarButtonItem *infoButton = [[UIBarButtonItem alloc] initWithCustomView:button];
-
-    
 
     [self.navigationItem setRightBarButtonItem:infoButton];
     
