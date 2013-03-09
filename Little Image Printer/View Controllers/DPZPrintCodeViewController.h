@@ -1,5 +1,5 @@
 //
-//  DPZAboutViewController.h
+//  DPZPrintCodeViewController.h
 //  Little Image Printer
 //
 //  Created by David Wilkinson on 09/03/2013.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DPZAboutViewController : UIViewController
+@interface DPZPrintCodeViewController : UIViewController
 <UIWebViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UIWebView *webView;

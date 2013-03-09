@@ -1,18 +1,18 @@
 //
-//  DPZAboutViewController.m
+//  DPZPrintCodeViewController.m
 //  Little Image Printer
 //
 //  Created by David Wilkinson on 09/03/2013.
 //  Copyright (c) 2013 David Wilkinson. All rights reserved.
 //
 
-#import "DPZAboutViewController.h"
+#import "DPZPrintCodeViewController.h"
 
-@interface DPZAboutViewController ()
+@interface DPZPrintCodeViewController ()
 
 @end
 
-@implementation DPZAboutViewController
+@implementation DPZPrintCodeViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,9 +28,9 @@
 {
     [super viewDidLoad];
 
-    self.title = @"About";
+    self.title = @"Print Codes";
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"about" ofType:@"html"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"print-code" ofType:@"html"];
     NSURL *url = [NSURL fileURLWithPath:path isDirectory:NO];
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
 }
@@ -40,6 +40,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

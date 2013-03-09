@@ -9,9 +9,12 @@
 #import "DPZEditPrinterViewController.h"
 #import "DPZDataManager.h"
 #import "DPZPrinterManager.h"
+#import "DPZPrintCodeViewController.h"
 #import "UIView+FirstResponder.h"
 
 @interface DPZEditPrinterViewController ()
+
+@property (nonatomic, assign) BOOL keyboardIsShowing;
 
 @end
 
@@ -74,12 +77,18 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIKeyboardWillHideNotification
                                                   object:nil];
+
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (void)refreshControls
@@ -153,25 +162,38 @@
     }
 }
 
+- (IBAction)findPrinterCode:(id)sender
+{
+    DPZPrintCodeViewController *vc = [[DPZPrintCodeViewController alloc] initWithNibName:@"DPZPrintCodeViewController" bundle:nil];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 
 // Called when the UIKeyboardWillShowNotification is sent.
 - (void)keyboardWillShow:(NSNotification*)notification
 {
-    NSDictionary* info = [notification userInfo];
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
-    CGRect f = self.containerView.frame;
-    f.origin.y = f.origin.y - kbSize.height;
-    NSTimeInterval duration = [self keyboardAnimationDurationForNotification:notification];
-    [UIView animateWithDuration:duration animations:^{
-        self.containerView.frame = f;
-    }];
+    if (!self.keyboardIsShowing)
+    {
+        self.keyboardIsShowing = YES;
+        
+        NSDictionary* info = [notification userInfo];
+        CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+        CGRect f = self.containerView.frame;
+        f.origin.y = f.origin.y - kbSize.height;
+        NSTimeInterval duration = [self keyboardAnimationDurationForNotification:notification];
+        [UIView animateWithDuration:duration animations:^{
+            self.containerView.frame = f;
+        }];
+    }
 }
 
 
 // Called when the UIKeyboardWillHideNotification is sent
 - (void)keyboardWillHide:(NSNotification*)notification
 {
+    self.keyboardIsShowing = NO;
+    
     NSDictionary* info = [notification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     
@@ -182,6 +204,7 @@
         self.containerView.frame = f;
     }];
 }
+
 
 - (NSTimeInterval)keyboardAnimationDurationForNotification:(NSNotification*)notification
 {

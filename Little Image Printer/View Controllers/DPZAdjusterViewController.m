@@ -81,6 +81,11 @@
     self.imageView.frame = [self frameForImageView];
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
 - (CGRect)frameForImageView
 {
     CGRect imageViewHolderFrame = self.imageViewHolder.frame;

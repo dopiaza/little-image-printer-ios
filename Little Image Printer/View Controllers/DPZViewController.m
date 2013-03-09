@@ -63,12 +63,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
 - (void)refresh
 {
+    BOOL hasCamera = [UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera];
+
     Printer *printer = [DPZPrinterManager sharedPrinterManager].activePrinter;
     BOOL printerChosen = (printer != nil);
+    
     self.printerNameLabel.text = printerChosen ? [NSString stringWithFormat:@"Printing to %@", printer.name] : @"Please tap on the button above to select a printer";
-    self.takePhotoButton.hidden = !printerChosen;
+    self.takePhotoButton.hidden = !(printerChosen && hasCamera);
     self.chooseFromLibraryButton.hidden = !printerChosen;
 }
 
