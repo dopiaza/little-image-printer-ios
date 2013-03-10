@@ -6,6 +6,11 @@ Twitter: @dopiaza
 
 Copyright (c) 2013 David Wilkinson
 
+## v0.5: 10th March 2013
+
+- Show activity indicator while printing
+- Reachability checks
+
 ## v0.4: 9th March 2013
 
 - Overhaul app look and feel
