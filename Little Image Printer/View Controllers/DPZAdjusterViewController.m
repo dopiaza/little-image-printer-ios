@@ -6,9 +6,12 @@
 //  Copyright (c) 2013 David Wilkinson. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
+
 #import "DPZAdjusterViewController.h"
 #import "DPZImageProcessor.h"
 #import "DPZPrinterManager.h"
+#import "DPZAppDelegate.h"
 
 #define LPWIDTH 384.0
 
@@ -24,6 +27,9 @@
 @property (nonatomic, strong) GPUImagePicture *sourcePicture;
 
 @property (nonatomic, strong) UIImage *adjustedImage; // The image after rotation and scaling for LP
+
+@property (nonatomic, strong) UIView *busyView; // Activity indicator shown whilst printing
+@property (nonatomic, strong) UIBarButtonItem *printButton;
 
 @end
 
@@ -45,8 +51,8 @@
 
     self.title = @"Adjust Image";
     
-    UIBarButtonItem *printButton = [[UIBarButtonItem alloc] initWithTitle:@"Print" style:UIBarButtonItemStyleBordered target:self action:@selector(print)];
-    self.navigationItem.rightBarButtonItem = printButton;
+    self.printButton = [[UIBarButtonItem alloc] initWithTitle:@"Print" style:UIBarButtonItemStyleBordered target:self action:@selector(print)];
+    self.navigationItem.rightBarButtonItem = self.printButton;
     
     self.adjustedImage = [self rotateAndScaleImage:self.sourceImage];
     
@@ -120,13 +126,50 @@
 
 - (IBAction)print
 {
-    [[DPZPrinterManager sharedPrinterManager] printImage:[self.grayscaleFilter imageFromCurrentlyProcessedOutput]];
+    DPZAppDelegate *appDelegate = (DPZAppDelegate *)[UIApplication sharedApplication].delegate;
+    if (!appDelegate.isReachable)
+    {
+        [self unreachable];
+        return;
+    }
+    
+    [self showBusy];
+    self.printButton.enabled = NO;
+    UIImage *image = [self.grayscaleFilter imageFromCurrentlyProcessedOutput];
+    [[DPZPrinterManager sharedPrinterManager] printImage:image withCompletionBlock:^(BOOL success)
+    {
+        [self hideBusy];
+        self.printButton.enabled = YES;
+        
+        if (!success)
+        {
+            NSError *error = [DPZPrinterManager sharedPrinterManager].error;
+            UIAlertView *alert = [[UIAlertView alloc]
+                                  initWithTitle:@"Error"
+                                  message:[NSString stringWithFormat:@"%@", error.localizedDescription]
+                                  delegate:nil
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles: nil];
+            [alert show];
+        }
+    }];
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)cancel
 {
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];    
+}
+
+- (void)unreachable
+{
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Network Error"
+                          message:@"You are not connected to the Internet right now. Please check your network settings and try again later."
+                          delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles: nil];
+    [alert show];
 }
 
 // Rotate image to correct orientation and scale to fit on Little Printer
@@ -175,6 +218,44 @@
     UIImage *adjustedImage = [UIImage imageWithCGImage:[context createCGImage:baseImage fromRect:baseImage.extent]];
     
     return adjustedImage;
+}
+
+- (void)showBusy
+{
+    CGSize imageViewHolderSize = self.imageViewHolder.frame.size;
+    CGFloat overlayWidth = 100.0;
+    CGFloat overlayHeight = 100.0;
+    CGFloat overlayX = (imageViewHolderSize.width - overlayWidth)/2;
+    CGFloat overlayY = (imageViewHolderSize.height - overlayHeight)/2;
+    
+    UIView *overlay = [[UIView alloc] initWithFrame:CGRectMake(overlayX, overlayY, overlayWidth, overlayHeight)];
+    overlay.backgroundColor = [UIColor blackColor];
+    overlay.alpha = 0.7;
+    overlay.layer.cornerRadius = 10.0;
+    
+    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+
+    CGRect activityIndicatorFrame = activityIndicator.frame;
+    CGSize activityIndicatorSize = activityIndicatorFrame.size;
+    CGFloat activityIndicatorX = (overlayWidth - activityIndicatorSize.width)/2;
+    CGFloat activityIndicatorY = (overlayHeight - activityIndicatorSize.height)/2;
+    activityIndicatorFrame.origin.x = activityIndicatorX;
+    activityIndicatorFrame.origin.y = activityIndicatorY;
+    activityIndicator.frame = activityIndicatorFrame;
+    activityIndicator.alpha = 1.0;
+    
+    [overlay addSubview:activityIndicator];
+    [self.imageViewHolder addSubview:overlay];
+    
+    [activityIndicator startAnimating];
+    
+    self.busyView = overlay;
+}
+
+- (void)hideBusy
+{
+    [self.busyView removeFromSuperview];
+    self.busyView = nil;
 }
 
 @end

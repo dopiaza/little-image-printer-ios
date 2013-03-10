@@ -16,4 +16,6 @@
 
 @property (strong, nonatomic) UIViewController *viewController;
 
+@property (readonly, nonatomic) BOOL isReachable;
+
 @end
