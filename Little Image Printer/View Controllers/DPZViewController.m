@@ -80,6 +80,13 @@
     self.printerNameLabel.text = printerChosen ? [NSString stringWithFormat:@"Printing to %@", printer.name] : @"Please tap on the button above to select a printer";
     self.takePhotoButton.hidden = !(printerChosen && hasCamera);
     self.chooseFromLibraryButton.hidden = !printerChosen;
+    
+    // If no camera, move the take photo over to the left hand side so that it isn't
+    // stuck in the middle of the screen on it's own
+    if (!hasCamera)
+    {
+        self.chooseFromLibraryButton.frame = self.takePhotoButton.frame;
+    }
 }
 
 - (void)about
