@@ -37,7 +37,7 @@
     UIImage *infoImage = [UIImage imageNamed:@"Info"];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:infoImage forState:UIControlStateNormal];
-    button.frame = CGRectMake(0.0, 0.0, 24.0, 24.0);
+    button.frame = CGRectMake(0.0, 0.0, 20.0, 20.0);
     [button addTarget:self
                action:@selector(about)
      forControlEvents:UIControlEventTouchUpInside];
