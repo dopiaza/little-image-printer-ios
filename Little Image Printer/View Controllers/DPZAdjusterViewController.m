@@ -11,6 +11,7 @@
 #import "DPZAdjusterViewController.h"
 #import "DPZImageProcessor.h"
 #import "DPZPrinterManager.h"
+#import "DPZAppDelegate.h"
 
 #define LPWIDTH 384.0
 
@@ -125,6 +126,13 @@
 
 - (IBAction)print
 {
+    DPZAppDelegate *appDelegate = (DPZAppDelegate *)[UIApplication sharedApplication].delegate;
+    if (!appDelegate.isReachable)
+    {
+        [self unreachable];
+        return;
+    }
+    
     [self showBusy];
     self.printButton.enabled = NO;
     UIImage *image = [self.grayscaleFilter imageFromCurrentlyProcessedOutput];
@@ -151,6 +159,17 @@
 - (IBAction)cancel
 {
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];    
+}
+
+- (void)unreachable
+{
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Network Error"
+                          message:@"You are not connected to the Internet right now. Please check your network settings and try again later."
+                          delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles: nil];
+    [alert show];
 }
 
 // Rotate image to correct orientation and scale to fit on Little Printer

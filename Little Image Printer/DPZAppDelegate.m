@@ -9,11 +9,20 @@
 #import "DPZAppDelegate.h"
 
 #import "DPZViewController.h"
+#import "Reachability.h"
+
+@interface DPZAppDelegate ()
+
+@property (nonatomic, strong) Reachability *reachability;
+
+@end
 
 @implementation DPZAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.reachability = [Reachability reachabilityWithHostname:@"remote.bergcloud.com"];    
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
@@ -57,6 +66,11 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)isReachable
+{
+    return self.reachability.isReachable;
 }
 
 @end
