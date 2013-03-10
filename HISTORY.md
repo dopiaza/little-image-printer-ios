@@ -6,6 +6,10 @@ Twitter: @dopiaza
 
 Copyright (c) 2013 David Wilkinson
 
+## v1.0: 10th March 2013
+
+First official release, submitted to the App Store
+
 ## v0.5: 10th March 2013
 
 - Show activity indicator while printing
